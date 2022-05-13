@@ -21,7 +21,7 @@ Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/propo
 | WETH  | Yes       | Yes        | 80%           | 82.5%                 | 5%                  | 10%            |
 | WFTM  | Yes       | Yes        | 50%           | 65%                   | 10%                 | 15%            |
 
-The reserve factor aks treasury collector contract can be found at [0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD](https://avascan.info/blockchain/c/address/0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD)
+The reserve factor aks treasury collector contract can be found at [0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD](https://ftmscan.com/address/0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD)
 
 ### Price Feed
 
