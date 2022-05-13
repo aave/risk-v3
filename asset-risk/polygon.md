@@ -4,9 +4,11 @@ description: Aave's Market on the Polygon sidechain
 
 # Polygon
 
-Aave's first exploration of New Frontiers is [Polygon](https://polygon.technology) (_formerly known as MATIC). A_ scalable sidechain of Ethereum that allows fast and nearly-free transactions, with a nascent ecosystem of applications such as community favourite [Aavegotchi](https://aavegotchi.com), decentralised exchange [Quickswap](https://quickswap.exchange/#/swap) as well as [Chainlink](https://chain.link) oracles.&#x20;
+Aave's first exploration of New Frontiers was V2 market launch on [Polygon](https://polygon.technology). A scalable sidechain of Ethereum that allows fast and nearly-free transactions, with a nascent ecosystem of applications such as community favourite [Aavegotchi](https://aavegotchi.com), decentralised exchange [Quickswap](https://quickswap.exchange/#/swap) as well as [Chainlink](https://chain.link) oracles.
 
-Nearly a hundred validators secure Polygon's Proof-of-Stake algorithm with back ups every 30 minutes on the Ethereum blockchain.&#x20;
+Nearly a hundred validators secure Polygon's Proof-of-Stake algorithm with back ups every 30 minutes on the Ethereum blockchain.
+
+Following huge success of V2 markets, Aave Protocol V3 has been deployed on Polygon.
 
 ### Risk Parameters
 
@@ -20,13 +22,12 @@ Nearly a hundred validators secure Polygon's Proof-of-Stake algorithm with back 
 | WBTC  | Yes       | Yes        | 70%           | 75%                   | 10%                 | 20%            |
 | WETH  | Yes       | Yes        | 80%           | 82.5%                 | 5%                  | 10%            |
 
-The reserve factor collector contract can be found at [0x7734280a4337f37fbf4651073db7c28c80b339e9](https://debank.com/profile/0x7734280a4337f37fbf4651073db7c28c80b339e9?chain=matic)
+The reserve factor collector contract can be found at [0x73D435AFc15e35A9aC63B2a81B5AA54f974eadFe](https://polygonscan.com/address/0x73D435AFc15e35A9aC63B2a81B5AA54f974eadFe)
 
 ### Price Feed
 
 Chainlink oracles are available on Polygon based on [this address repository](https://docs.chain.link/docs/matic-addresses/).
 
-### Disclaimer
+### Cross chain governance
 
-As the Polygon Market has been launched recently, it is currently controlled by a multisig until a specific governance bridge for Polygon is built. The multisig follows the same security practices implemented during the governance transition period for Aave V1 and V2.
-
+Both Aave V2 and V3 markets are controlled via Aave Governance via Aave Cross Chain Governance bridge.
