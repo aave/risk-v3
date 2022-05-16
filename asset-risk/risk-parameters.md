@@ -1,201 +1,79 @@
 # Risk Parameters
 
-Each asset in the Aave protocol has specific values related to their risk, which influences how they are supplied and borrowed. The calibration of the parameters for V2 is more aggressive as the Aave ecosystem is mature with some educated users and liquidators. In addition, Gauntlet is optimising the parameters weekly based on market conditions as described in the next section.&#x20;
+Each asset in the Aave protocol has specific values related to their risk, which influences how they are supplied and borrowed in the protocol. The calibration of the parameters for V3 is more aggressive and have additional risk parameters.
 
 The table below shows a summary of the latest values.
+{% hint style="info" %}
+Some of the tokens are listed only in some of the V3 markets based on their availability in the given L1 or L2 chain and associated risk.
+{% endhint %}
+[Risk]
 
-| Name                  | Symbol | Collateral | Loan To Value | Liquidation Threshold | Liquidation Bonus | Reserve Factor |
-| --------------------- | ------ | :--------: | :-----------: | :-------------------: | :---------------: | :------------: |
-| **Stablecoins**       |        |            |               |                       |                   |                |
-| Ampleforth            | AMPL   |     no     |               |                       |                   |       10%      |
-| Binance USD           | BUSD   |     no     |       -       |           -           |         -         |       10%      |
-| DAI                   | DAI    |     yes    |      75%      |          80%          |         5%        |       10%      |
-| Fei                   | FEI    |     no     |               |                       |                   |       20%      |
-| Frax                  | FRAX   |     no     |               |                       |                   |       10%      |
-| Gemini Dollars        | GUSD   |     no     |       -       |           -           |         -         |       10%      |
-| Paxos Standard        | PAX    |     no     |               |                       |                   |       10%      |
-| RAI                   | RAI    |     no     |       -       |           -           |         -         |       20%      |
-| Synthetix USD         | SUSD   |     no     |       -       |           -           |         -         |       20%      |
-| True USD              | TUSD   |     yes    |      75%      |          80%          |         5%        |       10%      |
-| USDC                  | USDC   |     yes    |      80%      |          85%          |         4%        |       10%      |
-| Tether                | USDT   |     no     |       -       |           -           |         -         |       10%      |
-| **Other Assets**      |        |            |               |                       |                   |                |
-| Aave                  | AAVE   |     yes    |      60%      |          70%          |        7.5%       |       0%       |
-| Balancer              | BAL    |     yes    |      65%      |          70%          |        10%        |       20%      |
-| Basic Attention Token | BAT    |     yes    |      75%      |          80%          |        7.5%       |       20%      |
-| Curve DAO             | CRV    |     yes    |      45%      |          60%          |        8.5%       |       20%      |
-| DeFi Pulse Index      | DPI    |     yes    |      60%      |          70%          |        10%        |       20%      |
-| Enjin                 | ENJ    |     yes    |      60%      |          65%          |        7.5%       |       20%      |
-| Ethereum              | ETH    |     yes    |     82.5%     |          85%          |         5%        |       10%      |
-| Kyber Network         | KNC    |     yes    |      60%      |          70%          |        10%        |       20%      |
-| Chainlink             | LINK   |     yes    |      70%      |          75%          |        10%        |       20%      |
-| Decentraland          | MANA   |     yes    |      65%      |          70%          |        7.5%       |       35%      |
-| Maker                 | MKR    |     yes    |      65%      |          70%          |         8%        |       20%      |
-| Republic Protocol     | REN    |     yes    |      60%      |          65%          |         8%        |       20%      |
-| Ren Filecoin          | RenFIL |     no     |       -       |           -           |         -         |       35%      |
-| Synthetix             | SNX    |     yes    |      40%      |          60%          |        7.5%       |       35%      |
-| Uniswap               | UNI    |     yes    |      60%      |          70%          |        10%        |       20%      |
-| Wrapped BTC           | WBTC   |     yes    |      70%      |          75%          |        6.5%       |       20%      |
-| Wrapped ETH           | WETH   |     yes    |      80%      |          85%          |         5%        |       10%      |
-| Sushi Bar             | XSUSHI |     yes    |      45%      |          60%          |        8.5%       |       35%      |
-| Yearn YFI             | YFI    |     yes    |      50%      |          65%          |        7.5%       |       20%      |
-| 0x                    | ZRX    |     yes    |      65%      |          70%          |        7.5%       |       20%      |
+| Name                  | Symbol | Siloed | Collateral in Isolation | Borrow in Isolation | Loan To Value | Liquidation Threshold | Liquidation Bonus | Debt Ceiling  | Supply Cap | Borrow Cap | Reserve Factor | Markets  |
+| --------------------- | ------ | :----: | :---------------------: | :-----------------: | :-----------: | :-------------------: | :---------------: | :-----------: | :--------: | :--------: | :------------: | :------- |
+| **Stablecoins**       |        |        |                         |                      |               |                       |                   |               |            |            |                | 
+| DAI                   | DAI    | false  |         -               |         true         |      75%      |          80%          |         5%        |       -       |     2B     |     0      |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
+| USDC                  | USDC   | false  |         -               |         true         | 82.5% (Polygon, Avalanche, Fantom)/80%(Optimism, Arbitrum, Harmony) |          85%          |         4%        |       -       |     2B     |      0     |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
+| Tether                | USDT   | false  |       true              |         true         |       75%     |          80%          |         5%        |      5M       |     2B     |      0     |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
+| Synthetix USD         | SUSD   | false  |         -               |          -           |       -       |           -           |         -         |      -        |     2B     |      0     |       10%      | Optimism,
+| Statis EURS Token     | EURS   | false  |         -               |          -           |       65%     |          70%          |         7.5%      |      5M       |     2B     |      0     |       10%      | Arbitrum, Polygon
+| Jarvis synthetic Euro | JEUR   | false  |                         |          -           |       -       |           0           |         0         |       -       |     -      |      -     |       20%      | Polygon
+| Angel Protocol Euro   | agEUR  | false  |                         |          -           |       -       |           0           |         0         |       -       |     -      |      -     |       20%      | Polygon
+                         | 
+| **Other Assets**      |        |        |                         |                      |               |                       |                   |               |            |            |                |
+| Chainlink             | LINK   | false  |                         |          -           | 50%(Polygon, Avalanche, Fantom) / 70% (Arbitrum, Optimism, Harmony) | 65%(Polygon, Avalanche, Fantom) / 75% (Arbitrum, Optimism, Harmony) |         7.5%      |       -       |    0       |     0      |       20%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
+| Wrapped BTC           | WBTC   | false  |                         |          -           |      70%      |          75%          |         6.5%      |       -       |    0       |     0      |       20%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
+| Wrapped ETH           | WETH   | false  |                         |          -           |      80%      |          82.5%        |         5%        |       -       |    0       |     0      |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
+| Aave                  | AAVE   | false  |                         |          -           |      60%      |          70%          |         7.5%      |       -       |    0       |     -      |       0%       | Optimism, Arbitrum, Polygon, Avalanche, Harmony
+| Polygon protocol coin | WMATIC | false  |                         |          -           |      65%      |          70%          |        10%        |       -       |    0       |     0      |       20%      | Polygon
+| Harmony protocol coin | WONE   |     ye |                         |                      |      80%      |          85%          |         5%        |               |            |            |       10%      | Harmony
+| Fantom protocol       | WFTM   |     ye |                         |                      |      80%      |          85%          |         5%        |               |            |            |       10%      | Fantom
+| Avalanche protocol    | WAVAX  |     ye |                         |                      |      80%      |          85%          |         5%        |               |            |            |       10%      | Avalanche
+| Aavegotchi            | GHST   | false  |                         |          -           |      25%      |          45%          |        15%        |       -       |    0       |     0      |       10%      | Polygon
+| Balancer              | BAL    | false  |                         |          -           |      20%      |          45%          |        10%        |       -       |    0       |     0      |       20%      | Polygon
+| Curve DAO             | CRV    | false  |                         |          -           |      75%      |          80%          |         5%        |       -       |    0       |     0      |       10%      | Polygon, Fantom
+| DeFi Pulse Index      | DPI    | false  |                         |          -           |      20%      |          45%          |        10%        |       -       |    0       |     0      |       20%      | Polygon
+| Sushi                 | SUSHI  | false  |                         |          -           |      20%      |          45%          |        10%        |       -       |    0       |     0      |       20%      | Polygon, Fantom
 
-The table above results from the asset risk assessment relating to security, governance and the markets. Tokens with security concerns around their smart contract cannot be considered for integration since these risks are impossible to control. Similarly, tokens with high risk exposure to single counter-parties cannot be used as collateral.
+The table above results from the asset risk assessment relating to security, governance and the markets. Assets with security concerns around their smart contract cannot be considered for integration since these risks are impossible to control. Similarly, tokens with high risk exposure to single counter-parties cannot be used as collateral.
 
 To retrieve the relevant values directly from the smart contracts, see [this section of the developer docs](https://docs.aave.com/developers/the-core-protocol/lendingpool#getreservedata).
 
 Gauntlet Network has tested the model parameterisation finding a low risk of insolvency but also suggesting some minor changes to further reduce it. The details can be found in Risk Audits, [Gauntlet Aave Market Risk Assessment](../audits/gauntlet.md).
 
 
-
-## Risk Parameters Change
-
-When market conditions change, risks change, and so we are continuously monitoring the assets integrated into the protocol which sometimes requires to quickly adapt the risk parameters. The table below tacks parameters changes which are in bold.
-
-### Dynamic Risk Parameter by Gauntlet
-
-[AIP 29](https://app.aave.com/governance/25-QmcbpNrBCbJcQiyEgHpeE1D9PajYd9D8iCwbAt7mFGngmS) The Aave DAO elected Gauntlet to provide dynamic risk parameters recommendations for the Aave Protocol.
-
-**22/10/2021** [**AIP 42 Risk Parameter Updates**](https://app.aave.com/#/governance/42-Qmd8PTDdcq971N6QhLAKBdxN3sjdV5KJqqVw45CaRGRnej)****
-
-| Parameter                 | Current Value | Recommended Value |   |   |   |
-| ------------------------- | ------------- | ----------------- | - | - | - |
-| BAT Liquidation Threshold | 75%           | 80%               |   |   |   |
-| CRV Loan To Value         | 35%           | 45%               |   |   |   |
-| CRV Liquidation Threshold | 55%           | 60%               |   |   |   |
-| ENJ Loan To Value         | 55%           | 60%               |   |   |   |
-| REN Loan To Value         | 50%           | 55%               |   |   |   |
-| SUSHI Loan To Value       | 30%           | 45%               |   |   |   |
-| UNI Loan To Value         | 55%           | 60%               |   |   |   |
-| WBTC Liquidation Bonus    | 7.5%          | 6.5%              |   |   |   |
-| YFI Liquidation Bonus     | 8%            | 7.5%              |   |   |   |
-
-**9/10/2021** [**AIP 39 Risk Parameters Update**](https://ipfs.aave.com/#/governance/39-QmXQMnHQMP6KmwkCG8MjBCjxxNEeaHszh9FgFZFASkqPS2)****
-
-| Asset  | Reco LTV  (current) | Reco LT  (current) | Reco LB  (current) |
-| ------ | ------------------- | ------------------ | ------------------ |
-| WETH   | 82.5% (80%)         |                    |                    |
-| CRV    | 35% (40%)           |                    |                    |
-| ENJ    | 55% (50%)           | 65% (60%)          |                    |
-| MANA   | 65% (60%)           | 70% (65%)          |                    |
-| UNI    | 50% (60%)           |                    |                    |
-| YFI    | 50% (45%)           | 65% (60%)          | 8% (10%)           |
-| ZRX    | 65% (60%)           |                    |                    |
-| XSUSHI | 30% (35%)           |                    |                    |
-| USDC   |                     |                    | 4% (5%)            |
-
-#### 24/09/2021 [AIP 38 Liquidation Bonus for Aave V2 Assets](https://app.aave.com/governance/38-QmciauyTVnoHG6bAXCxHjHqTsUfiDz7rSGFxMADqFgCh4z)
-
-| Current Liquidation\_Bonus | Recommended Liquidation Bonus |
-| -------------------------- | ----------------------------- |
-| WBTC (9%)                  | 7.5%                          |
-| REN (9%)                   | 7.5%                          |
-| BAT (9%)                   | 7.5%                          |
-| YFI (12.5%)                | 10%                           |
-| MKR (10%)                  | 8%                            |
-| ZRX (8%)                   | 7.5%                          |
-| CRV (12.5%)                | 10%                           |
-| XSUSHI (12.5%)             | 10%                           |
-| AAVE (8%)                  | 7.5%                          |
-| MANA (8%)                  | 7.5%                          |
-| SNX (9%)                   | 7.5%                          |
-
-#### 14/09/2021 [AIP 36 LTV and liquidations thresholds to moderate levels](https://app.aave.com/governance/33-QmVkeNwzQzshdjAhZHMQxU5Pbe87TrR1mwnyArzNYiPqaX)&#x20;
-
-| Current LTV/Liq\_Threshold | Moderate LTV | Moderate Liq\_Threshold |
-| -------------------------- | ------------ | ----------------------- |
-
-| USDC (80%, 85%) | 82.5 | 85 |
-| --------------- | ---- | -- |
-
-| DAI (75%, 80%) | 75 | 80 |
-| -------------- | -- | -- |
-
-| TUSD (75%, 80%) | 80 | 82.5 |
-| --------------- | -- | ---- |
-
-| WBTC (70%, 75%) | 70 | 75 |
-| --------------- | -- | -- |
-
-| WETH (80%, 82.5%) | 80 | 85 |
-| ----------------- | -- | -- |
-
-| REN (55%, 60%) | 55 | 65 |
-| -------------- | -- | -- |
-
-| BAT (70%, 75%) | 70 | 75 |
-| -------------- | -- | -- |
-
-| YFI (40%, 55%) | 45 | 60 |
-| -------------- | -- | -- |
-
-| DPI (60%, 70%) | 60 | 70 |
-| -------------- | -- | -- |
-
-| LINK (70%, 75%) | 70 | 75 |
-| --------------- | -- | -- |
-
-| BAL (55%, 60%) | 65 | 70 |
-| -------------- | -- | -- |
-
-| MKR (60%, 65%) | 65 | 70 |
-| -------------- | -- | -- |
-
-| ZRX (60%, 65%) | 60 | 70 |
-| -------------- | -- | -- |
-
-| UNI (60%, 65%) | 60 | 70 |
-| -------------- | -- | -- |
-
-| KNC (60%, 65%) | 60 | 70 |
-| -------------- | -- | -- |
-
-| CRV (40%, 55%) | 40 | 55 |
-| -------------- | -- | -- |
-
-| XSUSHI (25%, 45%) | 35 | 60 |
-| ----------------- | -- | -- |
-
-| ENJ (55%, 60%) | **50** | 60 |
-| -------------- | ------ | -- |
-
-| AAVE (50%, 65%) | 60 | 70 |
-| --------------- | -- | -- |
-
-| SNX (15%, 40%) | 20 | 45 |
-| -------------- | -- | -- |
-
-#### 4/09/2021 [AIP 34 Liquidations Bonus Update](https://app.aave.com/governance/30-QmccRszk94JUyj3xGcBUxUzCo43jZDQYgesEULsudVjm9v)
-
-| Asset  | Current Liquidation Bonus | Recommended Liquidation Bonus Update |
-| ------ | ------------------------- | ------------------------------------ |
-| ZRX    | 10%                       | 8%                                   |
-| WBTC   | 10%                       | 9%                                   |
-| SNX    | 10%                       | 9%                                   |
-| YFI    | 15%                       | 12.5%                                |
-| CRV    | 15%                       | 12.5%                                |
-| AAVE   | 10%                       | 8%                                   |
-| REN    | 10%                       | 9%                                   |
-| MANA   | 10%                       | 8%                                   |
-| BAT    | 10%                       | 9%                                   |
-| XSUSHI | 15%                       | 12.5%                                |
-
-### Changes from V1 to V2
-
-![Risk Parameter Change from V1 to V2](<../.gitbook/assets/Screenshot 2020-12-07 at 14.26.01.png>)
+{% hint style="info" %}
+V2 [ 👉🏻 risk parameter change](https://docs.aave.com/risk/asset-risk/risk-parameters#risk-parameters-change).
+{% endhint %}
 
 ## Risk Parameters Analysis
+The risk parameters allow to mitigate market risks of the assets supported on Aave Protocol. Each borrowing is guaranteed by a collateral that may be subject to volatility. Sufficient margin and incentives are needed for the position to remain collateralised in adverse market conditions. If the value of the collateral falls bellow a threshold, part of it is auctioned as `LIQUIDATION_BONUS` to repay portion of the debt position and keep the ongoing borrowing collateralised.
 
-The risk parameters allow to mitigate market risks of the currencies supported by the protocol. Each borrowing is guaranteed by a collateral that may be subject to volatility. Sufficient margin and incentives are needed for the position to remain collateralised in adverse market conditions. If the value of the collateral falls bellow a threshold, part of it is auctioned to repay part of the position and keep the ongoing borrowing collateralised.
+Market risks can be mitigated through Aave’s risk parameters which define collateralisation and liquidation rules.
 
-### Collaterals
+These parameters are calibrated per asset to account for the specific risks identified as shown in Figure 2.
 
-USDT, BUSD, PAX and sUSD are strongly exposed to the risk of single point of failure in their governance. Their counter-party risk is too high both in terms of centralisation and trust. For this reason, we cannot consider them to be warrant of the solvency of the protocol. On the other hand, AMPL and RAI are decentralised, though AMPL struggles with stability while RAI has little battletesting.  These assets cannot be used as collaterals
 
-Overall, stablecoins are mostly used for borrowing, while volatile assets which users are long on are mostly used as collateral. Hence, the users of the protocol still gain great benefits from the addition of these stablecoins. Their risks are mitigated by the fact they cannot be used as collateral.
+Aave Protocol V3 introduces 👇🏻 new (additional) risk parameters to provide a higher level of protection against insolvency.
 
-Market risks can be mitigated through Aave’s risk parameters which define collateralisation and liquidation rules. These parameters are calibrated per currency to account for the specific risks identified as shown in Figure 2.
+
+### Supply Caps:
+Supply caps define the maximum amount of an asset which can be supplied to the protocol. Supply caps can be used to limit the protocol exposure to riskier asset, and prevent against infinite minting exploits. A supply cap is an optional parameter, and the value will depend on the circulating and maximum supply of the asset.
+
+### Borrow Caps
+Borrow caps define the maximum amount of an asset which can be borrowed. Borrow caps can be used to prevent traditional and flash borrowing of an asset which may experience a price exploit and lead to protocol insolvency. A borrow cap is an optional parameter, and the value will depend on the circulating and maximum supply of the asset.
+
+### Isolation Mode
+Isolation mode can be used to limit the systemic risk of listing riskier assets. The *Isolation mode* limits an asset to:
+- only borrow isolated stablecoins
+- only use single isolated asset as collateral at a time
+
+More info on isolation mode can be found [here](https://docs.aave.com/developers/whats-new/isolation-mode).
+
+### Siloed Mode
+In V3 new assets with potentially manipulatable oracles (eg. illiquid Uni V3 pairs) can be listed in ***Siloed Mode*** to limit the risk of overall solvency of the protocol. A *siloed* assets is listed on Aave protocol as supply-only assets i.e. cannot be used as collateral.
+
+
+Other risk parameters also supported in V2
 
 ### **Loan to Value**
 
@@ -241,6 +119,13 @@ The reserve factor allocates a share of the protocol's interests to a collector 
 Aave's solvency risk is covered by the Safety Module, with the incentives coming from the ecosystem reserve. As such, the Reserve Factor is also a risk premium and so it is calibrated based on the overall risk of the asset. Stablecoins are the less risky assets with lower reserve factor while volatile assets hold more risk with a higher factor.
 
 The collector contract can be found at [0x464c71f6c2f760dda6093dcb91c24c39e5d6e18c](https://etherscan.io/address/0x464c71f6c2f760dda6093dcb91c24c39e5d6e18c).
+
+### Collaterals
+
+USDT, BUSD, PAX and sUSD are strongly exposed to the risk of single point of failure in their governance. Their counter-party risk is too high both in terms of centralisation and trust. For this reason, we cannot consider them to be warrant of the solvency of the protocol. On the other hand, AMPL and RAI are decentralised, though AMPL struggles with stability while RAI has little battletesting.  These assets cannot be used as collaterals
+
+Overall, stablecoins are mostly used for borrowing, while volatile assets which users are long on are mostly used as collateral. Hence, the users of the protocol still gain great benefits from the addition of these stablecoins. Their risks are mitigated by the fact they cannot be used as collateral.
+
 
 ### From Risks to Risk Parameters
 
