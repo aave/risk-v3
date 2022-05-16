@@ -3,19 +3,6 @@
 Aave enables users to supply and borrow digital assets through the pooling of funds. Suppliers receive protocol-issued aTokens, which gather supplies and the interest generated. Each borrow is secured by a collateral acting as a risk mitigation tool against default. 
 More details on how the protocol works can be found in [Aave’s Technical Paper](https://github.com/aave/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf).
 
-With V3, 
-- Assets can now be listed as *isolated*
-  - cannot supply other assets as collateral
-  - only borrow isolated stablecoin
-- Assets can now be listed as *siloed*
-  - can be supplied but not used as collateral
-- the Aave Protocol can support a maximum of 255 E-mode categories
-
-V3 of Aave protocol introduce new `ASSET_LISTING_ADMIN` role which allows holders of this role to:
-- add new assets to the Aave V3 markets
-- update asset oracle sources
-- update fallback oracles
-
 https://github.com/aave/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf
 
 Given the specificities of Aave’s model, the selection of assets has been performed with the following constraints:
@@ -27,6 +14,14 @@ Given the specificities of Aave’s model, the selection of assets has been perf
 {% hint style="info" %}
 To mitigate the protocol risk of insolvency, V3 allows to list new riskier token in *Isolation Mode*. Read more [👉🏻 Isolation Mode](https://docs.aave.com/developers/whats-new/isolation-mode)
 {% endhint %}
+
+{% hint style="info" %}
+  V3 of Aave protocol introduce new `ASSET_LISTING_ADMIN` role, assigned by Aave Governance, which allows holders of this role to:
+  - add new assets to the Aave V3 markets
+  - update asset oracle sources
+  - update fallback oracles
+{% endhint %}
+
 
 3. **A centralised asset accepted as collateral exposes the protocol to its centralisation risk.** The single point of failure risks of underlying token flow into Aave Protocol.
 
