@@ -1,6 +1,6 @@
 # Price Discovery
 
-The price update frequency results from the liquidation strategy. We follow a margin method, in which prices are refreshed every time the deviation crosses a certain threshold. We use [Chainlink](https://chain.link)’s decentralised oracles for the price feeds, the full adress repository is available [here](https://docs.chain.link/docs/ethereum-addresses/) and summarised below.
+The price update frequency results from the liquidation strategy. We follow a margin method, in which prices are refreshed every time the deviation crosses a certain threshold. We use [Chainlink](https://chain.link)’s decentralised oracles for the price feeds, the full address repository is available [here](https://docs.chain.link/docs/ethereum-addresses/) and summarised below.
 
 
 
