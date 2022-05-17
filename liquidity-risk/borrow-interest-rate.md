@@ -44,43 +44,23 @@ For rebalancing the stable rate up, these two conditions need to be met:
 2. Overall Borrow Rate, the weighted average of all the borrow rates: $$R_O < 25\%$$&#x20;
 
 
-
 ## Model Parameters
 
-The interest rate parameters have been calibrated per cluster of currencies that share similar risk profiles. First, it's crucial to distinguish assets that are used predominantly as collateral (volatile assets) which need liquidity at all times to enable liquidations. These assets require a low Optimal Utilisation rate typically calibrated around 45%. Secondly, the asset's liquidity on Aave is an important factor as the more liquidity, the more stable the utilisation: interest rates of assets with lower liquidity should be more conservative. For example lower liquidity stablecoins have lower Optimal Utilisation Ratio than those with higher liquidity.&#x20;
+First, it's crucial to distinguish assets that are used predominantly as collateral (volatile assets) which need liquidity at all times to enable liquidations. Secondly, the asset's liquidity on Aave is an important factor as more the liquidity -> more stable the utilisation. Interest rates of assets with lower liquidity should be more conservative.
 
 It's also key to consider market conditions: how can the asset be used in the current market? Aave's borrowing costs must be aligned with market yield opportunities. Or there would be a rate arbitrage with rational users incentivized to borrow all the liquidity on Aave to take advantage of higher yield opportunities.
 
-When market conditions change, the interest rate parameters can be adapted. These changes must adapt to utilisation on Aave’s market as well as to incentives across DeFi.
-
 With the rise of liquidity mining, Aave also adapted its cost of borrowing by lowering  $$U_{optimal}$$ of the assets affected. This increased the borrow costs that are now partially offset by the liquidity reward.
-
-Following the favorable historical review of liquidity risk, the interest rate models have been optimised to be more competitive while keeping theirs risk mitigation properties.&#x20;
 
 ### Variable Interest Rate Model Parameters
 
-| Asset  |  $$U_{optimal}$$ | Base | Slope 1 | Slope 2 |
-| ------ | :--------------: | :--: | :-----: | :-----: |
-| DAI    |        80%       |  0%  |    4%   |   75%   |
-| sUSD   |        90%       |  0%  |    4%   |   60%   |
-| USDC   |        90%       |  0%  |    4%   |   60%   |
-| USDT   |        90%       |  0%  |    4%   |   60%   |
-| EURS   |        90%       |  0%  |    4%   |   60%   |
-| JEUR   |        90%       |  0%  |    4%   |   60%   |
-| agEUR  |        90%       |  0%  |    4%   |   60%   |
-| AAVE   |                  |      |         |         |
-| BAL    |        45%       |  0%  |    7%   |   300%  |
-| CRV    |        45%       |  0%  |    7%   |   300%  |
-| DPI    |        45%       |  0%  |    7%   |   300%  |
-| ETH    |        45%       |  0%  |    7%   |   300%  |
-| LINK   |        45%       |  0%  |    7%   |   300%  |
-| WBTC   |        45%       |  0%  |    7%   |   300%  |
-| WMATIC |        45%       |  0%  |    7%   |   300%  |
-| WONE   |        45%       |  0%  |    7%   |   300%  |
-| WFTM   |        45%       |  0%  |    7%   |   300%  |
-| WAVAX  |        45%       |  0%  |    7%   |   300%  |
-| GHST   |        45%       |  0%  |    7%   |   300%  |
-| SUSHI  |        45%       |  0%  |    7%   |   300%  |
+The variable rate borrow provides lower interest rates. 
+
+Variable rate parameters:
+ - $$U_{optimal}$$ 
+ - Base Variable Borrow Rate
+ - Variable Rate Slope 1
+ - Variable Rate Slope 2
 
 ### Stable Interest Rate Model Parameters
 
@@ -89,38 +69,84 @@ The stable rate provides predictability for the borrower which comes at a cost, 
 1. Utilisation Rate: $$U_t > 95\%$$&#x20;
 2. Overall Borrow Rate, the weighed average of all the borrow rates: $$R_O < 25\%$$&#x20;
 
+{% hint style="info" %}
 The currencies the most exposed to liquidity risk do not offer stable rate borrowing.
+{% endhint %}
 
+{% hint style="info" %}
 The base rate of the stable rate model corresponds to the average market rate of the asset.
+{% endhint %}
 
-| Asset  |  $$U_{optimal}$$ | Base | Slope 1 | Slope 2 |
-| ------ | :--------------: | :--: | :-----: | :-----: |
-| DAI    |        80%       |  1%  |  0.5%   |   75%   |
-| sUSD   |        90%       |  1%  |  0.5%   |   75%   |
-| USDC   |        90%       |  1%  |  0.5%   |   75%   |
-| USDT   |        90%       |  1%  |  0.5%   |   75%   |
-| EURS   |        90%       |  1%  |  0.5%   |   75%   |
-| JEUR   |        90%       |  1%  |  0.5%   |   75%   |
-| agEUR  |        90%       |  1%  |  0.5%   |   75%   |
-| AAVE   |                  |      |         |         |
-| BAL    |        45%       |  2%  |    7%   |   300%  |
-| CRV    |        45%       |  2%  |    7%   |   300%  |
-| DPI    |        45%       |  2%  |    7%   |   300%  |
-| ETH    |        45%       |  2%  |    7%   |   300%  |
-| LINK   |        45%       |  2%  |    7%   |   300%  |
-| WBTC   |        45%       |  2%  |    7%   |   300%  |
-| WMATIC |        45%       |  2%  |    7%   |   300%  |
-| WONE   |        45%       |  2%  |    7%   |   300%  |
-| WFTM   |        45%       |  2%  |    7%   |   300%  |
-| WAVAX  |        45%       |  2%  |    7%   |   300%  |
-| GHST   |        45%       |  2%  |    7%   |   300%  |
-| SUSHI  |        45%       |  2%  |    7%   |   300%  |
+Stable rate parameters:
+ - $$U_{optimal}$$ 
+ - Base Variable Borrow Rate
+ - Variable Rate Slope 1
+ - Variable Rate Slope 2
+
+### V3 Interest rate Parameters
+The interest rate parameters for V3 markets have been deployed with 3 interest rate strategies calibrated per cluster of assets that share similar risk profiles. 
+
+## Rate Strategy Volatile One
+Volatile assets need liquidity at all times, thus calibrated at low Optimal Utilisation Ratio.
+
+{% hint style="info" %}
+ AAVE, BAL, CRV, DPI, GHST, LINK, SUSHI, WAVAX, WBTC, WETH, WFTM, WMATIC, WONE
+{% endhint %}
+  
+  | Parameters                | Value |
+  | :------------- ---------: | :---: |
+  | Optimal Usage             |  45%  |
+  | Base Variable Borrow Rate |   0   | 
+  | Variable Rate Slope 1     |   4%  |
+  | Variable Rate Slope 2     | 300%  |
+  | Base Stable Borrow Rate   |   2%  |
+  | Stable Rate Slope 1       |   7%  |
+  | Stable Rate Slope 2       | 300%  |
+
+## Rate Strategy Stable One
+Low liquidity stablecoins have lower Optimal Utilisation Ratio than those with higher liquidity.
+
+{% hint style="info" %}
+DAI
+{% endhint %}
+
+  | Parameters                | Value |
+  | :------------- ---------: | :---: |
+  | Optimal Usage             |  90%  |
+  | Base Variable Borrow Rate |   0   | 
+  | Variable Rate Slope 1     |   4%  |
+  | Variable Rate Slope 2     |  60%  |
+  | Base Stable Borrow Rate   |   2%  |
+  | Stable Rate Slope 1       |  0.5% |
+  | Stable Rate Slope 2       |  60%  |
+
+## Rate Strategy Stable One
+High liquidity stablecoins which are callibrated to lower rates to encourage borrow.
+
+{% hint style="info" %}
+SUSD, USDC, USDT, EURS, JEUR, AGEUR
+{% endhint %}
+
+  | Parameters                         | Value |
+  | :------------- ---------:          | :---: |
+  | Optimal Usage                      |  80%  |
+  | Base Variable Borrow Rate          |   0   | 
+  | Variable Rate Slope 1              |   4%  |
+  | Variable Rate Slope 2              |  75%  |
+  | Base Stable Borrow Rate            |   1%  |
+  | Stable Rate Slope 1                |  0.5% |
+  | Stable Rate Slope 2                |  75%  |
+  | Optimal Stable to Total Debt Ratio |  20%  |
 
 ## Interest Rate Parameters Change
 
 When market conditions change, risks change. The utilisation of reserves is continuously monitored to check liquidity is available. In case of prolonged full utilisation, the interest rate parameters are adapted to mitigate any risks emerging from market conditions
 
 The borrow interest rates paid are distributed as yield for aToken holders who have supplied to the protocol, excluding a share of yields sent to the ecosystem reserve defined by the reserve factor. This interest rate is generated on the asset that is borrowed out then shared among all the liquidity providers. The supply APY, $$D_t$$, is:
+
+{% hint style="info" %}
+When market conditions change, the interest rate parameters must be changed to adapt to utilisation on Aave’s market as well as to incentives across DeFi.
+{% endhint %}
 
 $$S_t = U_t ( SB_t S_t   + VB_t V_t)(1-R_t)$$
 
