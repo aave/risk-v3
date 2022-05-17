@@ -37,13 +37,6 @@ The table above results from the asset risk assessment relating to security, gov
 
 To retrieve the relevant values directly from the smart contracts, see [this section of the developer docs](https://docs.aave.com/developers/the-core-protocol/lendingpool#getreservedata).
 
-Gauntlet Network has tested the model parameterisation finding a low risk of insolvency but also suggesting some minor changes to further reduce it. The details can be found in Risk Audits, [Gauntlet Aave Market Risk Assessment](../audits/gauntlet.md).
-
-
-{% hint style="info" %}
-V2 [ 👉🏻 risk parameter change](https://docs.aave.com/risk/asset-risk/risk-parameters#risk-parameters-change).
-{% endhint %}
-
 ## Risk Parameters Analysis
 The risk parameters allow to mitigate market risks of the assets supported on Aave Protocol. Each borrowing is guaranteed by a collateral that may be subject to volatility. Sufficient margin and incentives are needed for the position to remain collateralised in adverse market conditions. If the value of the collateral falls bellow a threshold, part of it is auctioned as `LIQUIDATION_BONUS` to repay portion of the debt position and keep the ongoing borrowing collateralised.
 
@@ -68,11 +61,11 @@ Isolation mode can be used to limit the systemic risk of listing riskier assets.
 
 More info on isolation mode can be found [here](https://docs.aave.com/developers/whats-new/isolation-mode).
 
-### Siloed Mode
+### TODO Siloed Mode
 In V3 new assets with potentially manipulatable oracles (eg. illiquid Uni V3 pairs) can be listed in ***Siloed Mode*** to limit the risk of overall solvency of the protocol. A *siloed* assets is listed on Aave protocol as supply-only assets i.e. cannot be used as collateral.
 
 
-Other risk parameters also supported in V2
+Other risk parameters from V2
 
 ### **Loan to Value**
 
