@@ -12,7 +12,6 @@ Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/propo
 | Asset | Borrowing | Collateral | Loan to Value | Liquidation threshold | Liquidation penalty | Reserve Factor |
 | ----- | --------- | ---------- | ------------- | --------------------- | ------------------- | -------------- |
 | AAVE  | No        | Yes        | 40%           | 65%                   | 10%                 |                |
-| CRV   | Yes       | No         |               |                       |                     | 10%            |
 | DAI   | Yes       | Yes        | 75%           | 80%                   | 5%                  | 10%            |
 | LINK  |
 | SUSHI | Yes       | No         |               |                       |                     | 10%            |
@@ -31,3 +30,10 @@ Chainlink oracles are available on Arbitrum based on [👉🏻 address repositor
 ### Disclaimer
 
 During an initial bootstrapping phase, the Arbitrum deployment is controlled by a multisig and follows the same security practices implemented during the governance transition period for Aave V1 and V2.
+
+### Related Smart Contracts
+
+| Token   | AToken | Stable Debt Token  | Variable Debt Token  | Interest Rate Strategy |
+| :-----: | :----: | :----------------: | :------------------: | :--------------------: |
+| [AAVE](https://arbiscan.io/address/0xba5ddd1f9d7f570dc94a51479a000e3bce967196) | [aArbAAVE](https://arbiscan.io/address/0xf329e36C7bF6E5E86ce2150875a84Ce77f477375) | [sArbAAVE](https://arbiscan.io/address/0xfAeF6A702D15428E588d4C0614AEFb4348D83D48) | [vArbAAVE](https://arbiscan.io/address/0xE80761Ea617F66F96274eA5e8c37f03960ecC679) |
+| [DAI](https://arbiscan.io/address/0xda10009cbd5d07dd0cecc66161fc93d7c9000da1) | [aArbDAI](https://arbiscan.io/address/0x82E64f49Ed5EC1bC6e43DAD4FC8Af9bb3A2312EE) | [sArbDAI](https://arbiscan.io/address/0xd94112B5B62d53C9402e7A60289c6810dEF1dC9B) | [vArbDAI](https://arbiscan.io/address/0x8619d80FB0141ba7F184CbF22fd724116D9f7ffC)| 

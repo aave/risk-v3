@@ -14,7 +14,6 @@ $$U$$is an indicator of the availability of capital in the pool. The interest ra
 To retrieve the interest rate strategy contract on-chain, see [this section of the developer docs](https://docs.aave.com/developers/core-contracts/pool#getreservedata).
 
 ## Interest Rate Model
-
 Liquidity risk materialises when utilisation is high, it becomes more problematic as $$U$$ gets closer to 100%. To tailor the model to this constraint, the interest rate curve is split in two parts around an optimal utilisation rate $$U_{optimal}$$. Before  $$U_{optimal}$$the slope is small, after it starts rising sharply.&#x20;
 
 The interest rate$$R_t$$follows the model:
@@ -24,25 +23,20 @@ $$if \hspace{1mm} U < U_{optimal}:  \hspace{1cm}  R_t = R_0 + \frac{U_t}{U_{opti
 $$if \hspace{1mm} U \geq  U_{optimal}:  \hspace{1cm} R_t = R_0 + R_{slope1} + \frac{U_t-U_{optimal}}{1-U_{optimal}}R_{slope2}$$
 
 
-
 In the borrow rate technical implementation, the [calculateCompoundedInterest](https://github.com/aave/aave-v3-core/blob/e46341caf815edc268893f4f9398035f242375d9/contracts/protocol/libraries/math/MathUtils.sol#L51) method relies on an approximation that mostly affects high interest rates. The resulting actual borrow rate is:
 
 &#x20;$$Actual APY = (1+Theoretical APY/secsperyear)^{secsperyear}-1$$
 
-Both the variable and stable interest models, are derived from the formula above from the [Whitepaper](https://github.com/aave/aave-protocol/blob/master/docs/Aave\_Protocol\_Whitepaper\_v1\_0.pdf) with different parameters for each asset.
-
 * When $$U < U_{optimal}$$ the borrow interest rates increase slowly with utilisation
 * When $$U \geq  U_{optimal}$$ the borrow interest rates increase sharply with utilisation to above 50% APY if the liquidity is fully utilised.
 
+Both the variable and stable interest models, are derived from the formula above from the [Whitepaper](https://github.com/aave/aave-protocol/blob/master/docs/Aave\_Protocol\_Whitepaper\_v1\_0.pdf) with different parameters for each asset.
+
 Variable debt see their rate constantly evolving with utilisation. This means they are not ideal for financial planning.
 
-Hence stable debts, that maintain their interest rate at issuance until the specific rebalancing conditions are met. For rebalancing the stable rate down, the debts stable rate$$S$$needs to be greater than the current stable rate$$S_t$$ plus a delta equal to 20%: $$S \geq S_t + 20\%$$.
+Hence stable debts, that maintain their interest rate at issuance until the specific rebalancing conditions are met. In V3 interest models are optimised by new rate strategy parameter **Optimal Stable/Total Debt Ratio** to algorithmically manage stable rate.
 
-For rebalancing the stable rate up, these two conditions need to be met:
-
-1. Utilisation Rate: $$U_t > 95\%$$&#x20;
-2. Overall Borrow Rate, the weighted average of all the borrow rates: $$R_O < 25\%$$&#x20;
-
+$$if \hspace{1mm} ratio < ratio_{o}: \hspace{1cm} R_{t} = r_{0} + \frac{ratio - ratio_{o}}{1 - ratio_{o}}R_{base}$$
 
 ## Model Parameters
 
@@ -54,8 +48,6 @@ With the rise of liquidity mining, Aave also adapted its cost of borrowing by lo
 
 ### Variable Interest Rate Model Parameters
 
-The variable rate borrow provides lower interest rates. 
-
 Variable rate parameters:
  - $$U_{optimal}$$ 
  - Base Variable Borrow Rate
@@ -64,24 +56,25 @@ Variable rate parameters:
 
 ### Stable Interest Rate Model Parameters
 
+Stable rate parameters:
+ - $$U_{optimal}$$ 
+ - Base Variable Borrow Rate
+ - Variable Rate Slope 1
+ - Variable Rate Slope 2
+ - Stable to Total Debt Ratio
+
 The stable rate provides predictability for the borrower which comes at a cost, as the interest rates are higher than the variable rate. However the rate of a stable loan is fixed until the rebalancing conditions are met:
 
 1. Utilisation Rate: $$U_t > 95\%$$&#x20;
 2. Overall Borrow Rate, the weighed average of all the borrow rates: $$R_O < 25\%$$&#x20;
 
 {% hint style="info" %}
-The currencies the most exposed to liquidity risk do not offer stable rate borrowing.
+The assets that are most exposed to liquidity risk do not offer stable rate borrowing.
 {% endhint %}
 
 {% hint style="info" %}
 The base rate of the stable rate model corresponds to the average market rate of the asset.
 {% endhint %}
-
-Stable rate parameters:
- - $$U_{optimal}$$ 
- - Base Variable Borrow Rate
- - Variable Rate Slope 1
- - Variable Rate Slope 2
 
 ### V3 Interest rate Parameters
 The interest rate parameters for V3 markets have been deployed with 3 interest rate strategies calibrated per cluster of assets that share similar risk profiles. 
