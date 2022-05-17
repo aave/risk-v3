@@ -10,7 +10,7 @@ As the Aave ecosystem grows, so do the sums at risks making the protocol a highe
 | CertiK              |      ​       |   X   |      ​       |             |       X       |            |
 | Peckshield          |      ​       |    ​   |      X      |      X​      |               |       ​     |
 | Mixbytes            |      ​       |    ​   |      X      |             |        ​       |       ​     |
-| Certora             |      ​       |   X   |      ​       |             |               |            |
+| Certora             |      ​       |   X   |      ​       |      X      |               |            |
 | Open Zeppelin       |      X      |   ​    |       ​      |      X      |        ​       |       ​     |
 | Trail of Bits       |      X      |   ​    |       ​      |      X      |        ​       |       ​     |
 | ABDK                |             |   ​    |       ​      |      X      |        ​       |       ​     |
