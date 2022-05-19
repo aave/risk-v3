@@ -9,9 +9,9 @@ Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/propo
 
 ### Risk Parameters
 
-| Asset | eMode Params | Borrowing | Siloed | Collateral | B Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | S Cap | B Cap | Reserve Factor |
+| Asset | eMode Params | Borrowing | Siloed | Collateral | Borrow Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | Supply Cap | Borrow Cap | Reserve Factor |
 | ----- | ------------ | --------- | ------ | ---------- | ----------- | --- | ----------  | ---------- | --------- | ----- | ----- | -------------- |
-| AAVE  | category: 0,&#x20;LTV: ,&#x20; liq. Thresh: ,&#x20; Liq. Bonus: &#x20; | Yes       | 40%    | 65%        | 10%         |     |             |            |           |       |       |                |
+| AAVE  | <ul><li>category: 0</li><li>LTV: ,</li><li>liq. Thresh: ,</li><li>Liq. Bonus:</li></ul> | Yes       | 40%    | 65%        | 10%         |     |             |            |           |       |       |                |
 
 
 
