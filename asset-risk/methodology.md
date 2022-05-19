@@ -25,7 +25,7 @@ Smart contract hacks have already resulted in millions of losses and so tokens w
 
 **Counter-party risk** assesses qualitatively how and by who the currency is governed. We observe difference degrees of governance decentralisation that may give direct control over funds (as backing, for example) or attack vectors to the governance architecture which could expose control and funds. The counter-party risk is measured from the level of **centralisation** corresponding to the number of parties that control the said token's protocol as well as the number of holders and the **trust** in the entity, project or processes.
 
-Tokens with a high counter-party risk below D+ disqualify as collateral i.e. can only be listed as *Siloed Assets*.
+Tokens with a high counter-party risk below D+ disqualify as collateral.
 
 ### Market Risk
 

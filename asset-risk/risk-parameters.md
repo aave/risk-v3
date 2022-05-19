@@ -1,39 +1,6 @@
-# Risk Parameters
+# Parameters
 
-Each asset in the Aave protocol has specific values related to their risk, which influences how they are supplied and borrowed in the protocol. The calibration of the parameters for V3 is more aggressive and have additional risk parameters.
-
-The table below shows a summary of the latest values.
-{% hint style="info" %}
-Some of the tokens are listed only in some of the V3 markets based on their availability in the given L1 or L2 chain and associated risk.
-{% endhint %}
-[Risk]
-
-| Name                  | Symbol | Siloed |     Collateral         | Borrow in Isolation | Loan To Value | Liquidation Threshold | Liquidation Bonus | Debt Ceiling  | Supply Cap | Borrow Cap | Reserve Factor | Markets  |
-| --------------------- | ------ | :----: | :--------------------: | :-----------------: | :-----------: | :-------------------: | :---------------: | :-----------: | :--------: | :--------: | :------------: | :------- |
-| **Stablecoins**       |        |        |                        |                      |               |                       |                   |               |            |            |                | 
-| DAI                   | DAI    | false  |        yes             |         yes         |      75%      |          80%          |         5%        |       -       |     2B     |     0      |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
-| USDC                  | USDC   | false  |        yes             |         yes         | 82.5% (Polygon, Avalanche, Fantom)/80%(Optimism, Arbitrum, Harmony) |          85%          |         4%(Polygon, Avalanche, Fantom) / 5%(Optimism, Arbitrum, Harmony)         |       -       |     2B     |      0     |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
-| Tether                | USDT   | false  | only in Isolation mode |         yes         |       75%     |          80%          |         5%        |      5M       |     2B     |      0     |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
-| Synthetix USD         | SUSD   | false  |         no             |          no           |       -       |           -           |         -         |      -        |     2B     |      0     |       10%      | Optimism,
-| Statis EURS Token     | EURS   | false  | only in Isolation mode |          no           |       65%     |          70%          |         7.5%      |      5M       |     2B     |      0     |       10%      | Arbitrum, Polygon
-| Jarvis synthetic Euro | JEUR   | false  |         no             |          no           |       -       |           0           |         0         |       -       |     -      |      -     |       20%      | Polygon
-| Angel Protocol Euro   | agEUR  | false  |         no             |          no           |       -       |           0           |         0         |       -       |     -      |      -     |       20%      | Polygon
-| **Other Assets**      |        |        |                        |                      |               |                       |                   |               |            |            |                |
-| Chainlink             | LINK   | false  |        yes             |          no           | 50%(Polygon, Avalanche, Fantom) / 70% (Arbitrum, Optimism, Harmony) | 65%(Polygon, Avalanche, Fantom) / 75% (Arbitrum, Optimism, Harmony) |         7.5%      |       -       |    0       |     0      |       20%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
-| Wrapped BTC           | WBTC   | false  |        yes              |          no           |      70%      |          75%          | 6.5%/ 10% (Arbitrum, Optimism) |       -       |    0       |     0      |       20%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
-| Wrapped ETH           | WETH   | false  |        yes              |          no           |      80%      |          82.5%        |         5%        |       -       |    0       |     0      |       10%      | Optimism, Arbitrum, Polygon, Fantom, Avalanche, Harmony
-| Aave                  | AAVE   | false  |        yes              |          no           | 60%(Polygon, Avalanche, Fantom)/ 50%(Arbitrum, Optimism, Harmony) | 70%(Polygon, Avalanche, Fantom)/ 65% (Arbitrum, Optimism, Harmony) | 7.5%(Polygon, Avalanche, Fantom)/ 10%(Arbitrum, Optimism, Harmony) |       -       |    0       |     -      |       0%       | Optimism, Arbitrum, Polygon, Avalanche, Harmony, Fantom
-| Wrapped Matic         | WMATIC | false  |        yes              |          no           |      65%      |          70%          |        10%        |       -       |    0       |     0      |       20%      | Polygon
-| Wrapped ONE           | WONE   | false  |        -                |          no           |      25%      |          45%          |        15%        |       -       |    0       |     0      |       20%      | Harmony
-| Wrapped Fantom        | WFTM   | false  |        -                |          no           |      25%      |          45%          |        15%        |       -       |    0       |     0      |       20%      | Fantom
-| Wrapped AVAX          | WAVAX  | false  |        -                |          no           |      65%      |          70%          |        10%        |       -       |    0       |     0      |       20%      | Avalanche
-| Aavegotchi            | GHST   | false  |        yes              |          no           |      25%      |          45%          |        15%        |       -       |    0       |     0      |       10%      | Polygon
-| Balancer              | BAL    | false  |        yes              |          no           |      20%      |          45%          |        10%        |       -       |    0       |     0      |       20%      | Polygon
-| Curve DAO             | CRV    | false  |        yes              |          no           |      75%      |          80%          |         5%        |       -       |    0       |     0      |       10%      | Polygon, Fantom
-| DeFi Pulse Index      | DPI    | false  |        yes              |          no           |      20%      |          45%          |        10%        |       -       |    0       |     0      |       20%      | Polygon
-| SushiToken (PoS)      | SUSHI  | false  |        yes              |          no           |      20%      |          45%          |        10%        |       -       |    0       |     0      |       20%      | Polygon, Fantom
-
-The table above results from the asset risk assessment relating to security, governance and the markets. Assets with security concerns around their smart contract cannot be considered for integration since these risks are impossible to control. Similarly, tokens with high risk exposure to single counter-parties cannot be used as collateral.
+Each asset in the Aave protocol has specific values related to their risk, which influences how they are supplied and borrowed in the protocol. The calibration of the parameters for V3 is more aggressive and have additional risk parameters relating to security, governance and the markets. Assets with security concerns around their smart contract cannot be considered for integration since these risks are impossible to control. Similarly, tokens with high risk exposure to single counter-parties cannot be used as collateral.
 
 To retrieve the relevant values directly from the smart contracts, see [this section of the developer docs](https://docs.aave.com/developers/the-core-protocol/lendingpool#getreservedata).
 
@@ -61,9 +28,8 @@ Isolation mode can be used to limit the systemic risk of listing riskier assets.
 
 More info on isolation mode can be found [here](https://docs.aave.com/developers/whats-new/isolation-mode).
 
-### TODO Siloed Mode
-In V3 new assets with potentially manipulatable oracles (eg. illiquid Uni V3 pairs) can be listed in ***Siloed Mode*** to limit the risk of overall solvency of the protocol. A *siloed* assets is listed on Aave protocol as supply-only assets i.e. cannot be used as collateral.
-
+### Siloed Mode
+In V3 new assets with potentially manipulatable oracles (eg. illiquid Uni V3 pairs) can be listed in ***Siloed Mode*** to limit the risk of overall solvency of the protocol. A *siloed* assets on Aave protocol, restricts the borrower to single borrow only i.e. user borrowing a siloed asset cannot borrow any other asset.
 
 Other risk parameters from V2
 
@@ -110,14 +76,12 @@ The reserve factor allocates a share of the protocol's interests to a collector 
 
 Aave's solvency risk is covered by the Safety Module, with the incentives coming from the ecosystem reserve. As such, the Reserve Factor is also a risk premium and so it is calibrated based on the overall risk of the asset. Stablecoins are the less risky assets with lower reserve factor while volatile assets hold more risk with a higher factor.
 
-The collector contract can be found at [0x464c71f6c2f760dda6093dcb91c24c39e5d6e18c](https://etherscan.io/address/0x464c71f6c2f760dda6093dcb91c24c39e5d6e18c).
 
 ### Collaterals
 
-USDT, BUSD, PAX and sUSD are strongly exposed to the risk of single point of failure in their governance. Their counter-party risk is too high both in terms of centralisation and trust. For this reason, we cannot consider them to be warrant of the solvency of the protocol. On the other hand, AMPL and RAI are decentralised, though AMPL struggles with stability while RAI has little battletesting.  These assets cannot be used as collaterals
+USDT and sUSD are strongly exposed to the risk of single point of failure in their governance. Their counter-party risk is too high both in terms of centralisation and trust. For this reason, we cannot consider them to be warrant of the solvency of the protocol. These are thus limited to collateral in Isolation Mode. On the other hand, agEUR and jEUR are decentralised, but has little battletesting.  These assets cannot be used as collaterals
 
 Overall, stablecoins are mostly used for borrowing, while volatile assets which users are long on are mostly used as collateral. Hence, the users of the protocol still gain great benefits from the addition of these stablecoins. Their risks are mitigated by the fact they cannot be used as collateral.
-
 
 ### From Risks to Risk Parameters
 
@@ -133,7 +97,7 @@ The volatility **** of price can negatively affect the collateral which safeguar
 
 The less volatile currencies are the stablecoins followed by ETH, they have the highest LTV at 75%, and the highest liquidation threshold at 80%.
 
-The most volatile currencies REP and LEND have the lowest LTV at 35% and 40%. The liquidations thresholds are set at 65% to protect our users from a sharp drop in price which could lead to undercollaterisation followed by liquidation.
+The most volatile assets have the lowest LTV at 35% and 40%. The liquidations thresholds are set at 65% to protect our users from a sharp drop in price which could lead to undercollaterisation followed by liquidation.
 
 #### **Market Capitalisation**
 
