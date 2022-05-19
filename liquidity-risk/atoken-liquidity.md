@@ -6,5 +6,8 @@ description: Alternative sources of aToken liquidity
 
 An additional tool to mitigate aTokens’ liquidity risk is to provide alternative sources of liquidity enabling users to redeem aTokens even when there is no liquidity available in the protocol.
 
-Aave has set up liquidity pools on Uniswap and Balancer to add sources of liquidity. As well as the [Aave Curve pool](https://www.curve.fi/aave/stats) with over $30 million of aDAI + aUSDC + aUSDT.
+aToken pools are available in various dexes with most liquidity on Curve Finance
+      - [Aave Ethereum Curve stablepool](https://www.curve.fi/aave/stats) >$40m
+      - [Aave Avalanche Curve stablepool](https://avax.curve.fi/aave)
+      - [Aave Avalanche Curve stablepool](https://polygon.curve.fi/aave)
 
