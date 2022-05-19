@@ -95,6 +95,7 @@ Volatile assets need liquidity at all times, thus calibrated at low Optimal Util
   | Base Stable Borrow Rate   |   2%  |
   | Stable Rate Slope 1       |   7%  |
   | Stable Rate Slope 2       | 300%  |
+  | Optimal Stable to Total Debt Ratio |  20%  |
 
 ## Rate Strategy Stable One
 Low liquidity stablecoins have lower Optimal Utilisation Ratio than those with higher liquidity.
@@ -112,8 +113,9 @@ DAI
   | Base Stable Borrow Rate   |   2%  |
   | Stable Rate Slope 1       |  0.5% |
   | Stable Rate Slope 2       |  60%  |
+  | Optimal Stable to Total Debt Ratio |  20%  |
 
-## Rate Strategy Stable One
+## Rate Strategy Stable Two
 High liquidity stablecoins which are callibrated to lower rates to encourage borrow.
 
 {% hint style="info" %}
