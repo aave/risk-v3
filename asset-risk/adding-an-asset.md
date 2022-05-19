@@ -29,7 +29,7 @@ To mitigate the protocol risk of insolvency, V3 allows to list new riskier token
 
 5. **Having liquidity from different tokens in our pools reduces risks via diversification benefits.**
 
-When adding a token to the protocol, significant controls are required to ensure the asset will add more value than risk. Only tokens with a worthy product and significant community should be considered. The asset risk methodology offers a framework to assess and compare tokens' risks for the protocol, supporting the calibration of the model risk parameters to mitigate those risks.
+When adding a token to the protocol, significant controls are required to ensure the asset will add more value than risk. Only tokens with a worthy product and significant community should be considered. The asset risk methodology offers a framework to assess and compare the tokens' risks for the protocol, and how to calibrate model parameters to mitigate those risks.
 
 {% hint style="info" %}
 See the [Governance docs](https://docs.aave.com/governance/) for the new asset listing process.
