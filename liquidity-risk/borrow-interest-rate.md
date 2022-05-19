@@ -131,15 +131,16 @@ SUSD, USDC, USDT, EURS, JEUR, AGEUR
   | Stable Rate Slope 2                |  75%  |
   | Optimal Stable to Total Debt Ratio |  20%  |
 
-## Interest Rate Parameters Change
-
-When market conditions change, risks change. The utilisation of reserves is continuously monitored to check liquidity is available. In case of prolonged full utilisation, the interest rate parameters are adapted to mitigate any risks emerging from market conditions
-
-The borrow interest rates paid are distributed as yield for aToken holders who have supplied to the protocol, excluding a share of yields sent to the ecosystem reserve defined by the reserve factor. This interest rate is generated on the asset that is borrowed out then shared among all the liquidity providers. The supply APY, $$D_t$$, is:
-
 {% hint style="info" %}
 When market conditions change, the interest rate parameters must be changed to adapt to utilisation on Aave’s market as well as to incentives across DeFi.
 {% endhint %}
+
+
+
+## Supply rate
+
+The borrow interest rates paid are distributed as yield for aToken holders who have supplied to the protocol, excluding a share of yields sent to the ecosystem reserve defined by the reserve factor. This interest rate is generated on the asset that is borrowed out then shared among all the liquidity providers. The supply APY, $$D_t$$, is:
+
 
 $$S_t = U_t ( SB_t S_t   + VB_t V_t)(1-R_t)$$
 
