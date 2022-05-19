@@ -15,21 +15,20 @@ Given the specificities of Aave’s model, the selection of assets has been perf
 To mitigate the protocol risk of insolvency, V3 allows to list new riskier token in *Isolation Mode*. Read more [👉🏻 Isolation Mode](https://docs.aave.com/developers/whats-new/isolation-mode)
 {% endhint %}
 
-{% hint style="info" %}
-  V3 of Aave protocol introduce new `ASSET_LISTING_ADMIN` role, assigned by Aave Governance, which allows holders of this role to:
-  - add new assets to the Aave V3 markets
-  - update asset oracle sources
-  - update fallback oracles
-{% endhint %}
-
-
 3. **A centralised asset accepted as collateral exposes the protocol to its centralisation risk.** The single point of failure risks of underlying token flow into Aave Protocol.
 
 4. **Assets only enabled for supplying and borrowing (not usable as collaterals) aka _Siloed assets_ present lower risk for the protocol.** Collaterals are the assets of the protocol. To remain solvent, these assets must remain greater than the liabilities. Tokens which can only be used for borrowing should always be excessively backed by collateral assets.
 
 5. **Having liquidity from different tokens in our pools reduces risks via diversification benefits.**
 
-When adding a token to the protocol, significant controls are required to ensure the asset will add more value than risk. Only tokens with a worthy product and significant community should be considered. The asset risk methodology offers a framework to assess and compare tokens' risks for the protocol, supporting the calibration of the model risk parameters to mitigate those risks.
+When adding a token to the protocol, significant controls are required to ensure the asset will add more value than risk. Only tokens with a worthy product and significant community should be considered. The asset risk methodology offers a framework to assess and compare the tokens' risks for the protocol, and how to calibrate model parameters to mitigate those risks.
+
+{% hint style="info" %}
+  V3 of Aave protocol introduce new `ASSET_LISTING_ADMIN` role, assigned by Aave Governance, which allows holders of this role to:
+  - add new assets to the Aave V3 markets
+  - update asset oracle sources
+  - update fallback oracles
+{% endhint %}
 
 {% hint style="info" %}
 See the [Governance docs](https://docs.aave.com/governance/) for the new asset listing process.
