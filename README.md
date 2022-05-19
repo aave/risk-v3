@@ -1,10 +1,10 @@
 # Aave's Risk Framework
 
 {% hint style="info" %}
-Aave holds security at its core with audits by Trail of Bits, ABDK, Peckshield, OpenZeppelin, SigmaPrime and  Certora  as  detailed  in  Security & Audits.
+Aave holds security at its core with V3 audits by [Trail of Bits](https://github.com/aave/aave-v3-core/blob/master/audits/07-01-2022_TrailOfBits_AaveV3.pdf), [ABDK](https://github.com/aave/aave-v3-core/blob/master/audits/27-01-2022_ABDK_AaveV3.pdf), [Peckshield](https://github.com/aave/aave-v3-core/blob/master/audits/14-01-2022_PeckShield_AaveV3.pdf), [OpenZeppelin](https://github.com/aave/aave-v3-core/blob/master/audits/01-11-2021_OpenZeppelin_AaveV3.pdf), [SigmaPrime] and formal verification by [Certora](https://github.com/aave/aave-v3-core/blob/master/Certora/certora/Verification_Report.pdf) further detailed in Security & Audits.
 {% endhint %}
 
-Aave Protocol V3 introduces more sophisticated risk parameters and features to provide the protocol a high level of protection against potential insolvency. 👇🏻 is the list of New additions on _risk management_ of protocol
+Aave Protocol V3 introduces more sophisticated risk parameters and features to provide the protocol a high level of protection against potential insolvency. 👇🏻 is the list of new protocol _risk management_ additions
 - Isolation mode assets
   Allows to list riskier assets in *Isolation*. Isolation mode restricts to:
   - only borrow isolated stablecoins
