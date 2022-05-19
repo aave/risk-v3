@@ -87,7 +87,7 @@ Volatile assets need liquidity at all times, thus calibrated at low Optimal Util
 {% endhint %}
   
   | Parameters                | Value |
-  | :------------- ---------: | :---: |
+  | -----------------------   | ----- |
   | Optimal Usage             |  45%  |
   | Base Variable Borrow Rate |   0   | 
   | Variable Rate Slope 1     |   4%  |
@@ -104,7 +104,7 @@ DAI
 {% endhint %}
 
   | Parameters                | Value |
-  | :------------- ---------: | :---: |
+  | -----------------------   | ----- |
   | Optimal Usage             |  90%  |
   | Base Variable Borrow Rate |   0   | 
   | Variable Rate Slope 1     |   4%  |
@@ -121,7 +121,7 @@ SUSD, USDC, USDT, EURS, JEUR, AGEUR
 {% endhint %}
 
   | Parameters                         | Value |
-  | :------------- ---------:          | :---: |
+  | --------------------------------   | ----- |
   | Optimal Usage                      |  80%  |
   | Base Variable Borrow Rate          |   0   | 
   | Variable Rate Slope 1              |   4%  |
