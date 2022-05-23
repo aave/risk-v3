@@ -31,6 +31,16 @@ More info on isolation mode can be found [here](https://docs.aave.com/developers
 ### Siloed Mode
 In V3 new assets with potentially manipulatable oracles (eg. illiquid Uni V3 pairs) can be listed in ***Siloed Mode*** to limit the risk of overall solvency of the protocol. A *siloed* assets on Aave protocol, restricts the borrower to single borrow only i.e. user borrowing a siloed asset cannot borrow any other asset.
 
+### eMode
+Efficient Mode (eMode) allows assets correlated in price (eg. DAI, USDC, USDT) to be listed in same eMode category and thus maximise capital efficiency by allowing higher LTV when both borrowed and collateral asset belong to same eMode category. Currently only single eMode category is defined in Aave protocol V3 markets - Stablecoins, category 1.
+
+V3 allows `RISK_ADMINS` and `POOL_ADMIN`, selected by Aave Governance, to configure upto 255 eMode categories, with each `EModeCategory` having following risk management parameters:
+
+- LTV (loan to value)
+- Liquidation Threshold
+- Liquidation Bonus
+- Custom price oracle (optional)
+
 Other risk parameters from V2
 
 ### **Loan to Value**
