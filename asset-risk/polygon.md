@@ -3,12 +3,11 @@ description: Aave's Market on the Polygon sidechain
 ---
 
 # Polygon
+The community’s first exploration of new frontiers (i.e., networks) for the Aave Protocol was V2 market launch on Polygon. A scalable sidechain of Ethereum that allows for fast and low fee transactions with a nascent ecosystem of applications including community favourite [Aavegotchi](https://aavegotchi.com), decentralised exchange [Quickswap](https://quickswap.exchange/#/swap) as well as [Chainlink](https://chain.link) oracles.
 
-Aave's first exploration of New Frontiers was V2 market launch on [Polygon](https://polygon.technology). A scalable sidechain of Ethereum that allows fast and nearly-free transactions, with a nascent ecosystem of applications such as community favourite [Aavegotchi](https://aavegotchi.com), decentralised exchange [Quickswap](https://quickswap.exchange/#/swap) as well as [Chainlink](https://chain.link) oracles.
+Nearly a hundred validators secure Polygon's Proof-of-Stake algorithm with back ups occurring every 30 minutes on the Ethereum blockchain.
 
-Nearly a hundred validators secure Polygon's Proof-of-Stake algorithm with back ups every 30 minutes on the Ethereum blockchain.
-
-Following huge success of V2 markets, Aave Protocol V3 has been deployed on Polygon.
+Following huge success of V2 markets, V3 of the Aave Protocol has been deployed on Polygon.
 
 ### Risk Parameters
 
@@ -74,4 +73,4 @@ Chainlink oracles are available on Polygon based on [this address repository](ht
 
 ### Cross chain governance
 
-Both Aave V2 and V3 markets are controlled via Aave Governance via Aave Cross Chain Governance bridge.
+Both Aave V2 and V3 markets are controlled via the Aave Governance via Aave Cross Chain Governance bridge.

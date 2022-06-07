@@ -4,7 +4,7 @@ description: Aave's deployment on the Fantom
 
 # Fantom
 
-Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0x4a8ff1d3876390cde6b43fc93c0135de67fb6aa68a23e8eefeb770fe95735932), the Aave Protocol V3 has been deployed on Fantom. Fantom is an EVM-compatible L1 chain that offers fast finality, low transaction fees and has the [6th largest TVL according to DefiLlama](https://defillama.com/chains).
+Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0x4a8ff1d3876390cde6b43fc93c0135de67fb6aa68a23e8eefeb770fe95735932), V3 of the Aave Protocol has been deployed on Fantom. Fantom is an EVM-compatible L1 chain that offers fast finality, low transaction fees, and has the [6th largest TVL according to DefiLlama](https://defillama.com/chains).
 
 ### Risk Parameters
 
@@ -56,5 +56,6 @@ Chainlink oracles are available on Fantom based on [👉🏻 address repository]
 | [SUSHI](https://ftmscan.com/address/0xae75a438b2e0cb8bb01ec1e1e376de11d44477cc) | [aFanSUSHI](https://ftmscan.com/address/0xc45a479877e1e9dfe9fcd4056c699575a1045daa) | [sFanSUSHI](https://ftmscan.com/address/0x78246294a4c6fbf614ed73ccc9f8b875ca8ee841#code) | [vFanSUSHI](https://ftmscan.com/address/0x34e2ed44ef7466d5f9e0b782b5c08b57475e7907) | [InterestRateStrategy](https://ftmscan.com/address/0x4aa694e6c06d6162d95be98a2df6a521d5a7b521#code) |
 
 ### Disclaimer
+{% hint style=“info” %} Aave team do not hold any keys to the multisig controlling Aave V3 markets on Fantom {% endhint %}
 
-During an initial bootstrapping phase, the Fantom deployment is controlled by a multisig and follows the same security practices implemented during the governance transition period for Aave V1 and V2.
+During an initial bootstrapping phase, the Fantom deployment is controlled by a multisig (keys held by Fantom community) and follows the same security practices implemented during the governance transition period for Aave V1 and V2.

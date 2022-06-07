@@ -4,7 +4,7 @@ description: Aave's deployment on the Optimism
 
 # Optimism
 
-Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0xba58ab5e24dcaef5490fd8717320f74e3c85aea36811d421b48822d4069b6d45), the Aave Protocol V3 has been deployed on Optimism. Optimism is a Layer 2 Optimistic Rollup network designed to utilize the strong security guarantees of Ethereum while reducing its cost and latency. Optimism is EVM equivalent, making the transition from L1 to L2 as seamless as possible.
+Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0xba58ab5e24dcaef5490fd8717320f74e3c85aea36811d421b48822d4069b6d45), V3 of the Aave Protocol has been deployed on Optimism. Optimism is a Layer 2 Optimistic Rollup network designed to utilize the strong security guarantees of Ethereum while reducing its cost and latency. Optimism is EVM equivalent, making the transition from L1 to L2 as seamless as possible
 
 You can read more about optimism [👉 here](https://www.optimism.io/about)
 
@@ -42,5 +42,7 @@ Chainlink oracles are available on Optimism based on [👉🏻 address repositor
 | [WETH](https://optimistic.etherscan.io/address/0x4200000000000000000000000000000000000006) | [aOptWETH](https://optimistic.etherscan.io/address/0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8) | [sOptWETH](https://optimistic.etherscan.io/address/0xD8Ad37849950903571df17049516a5CD4cbE55F6#code) | [vOptWETH](https://optimistic.etherscan.io/address/0x0c84331e39d6658Cd6e6b9ba04736cC4c4734351) | [InterestRateStrategy](https://optimistic.etherscan.io/address/0xee1bac9355eaafcd1b68d272d640d870bc9b4b5c#code) |
 
 ### Disclaimer
+
+{% hint style=“info” %} Aave team do not hold any keys to the multisig controlling Aave V3 markets on Optimism {% endhint %}
 
 During an initial bootstrapping phase, the Optimism deployment is controlled by a Gnosis safe multisig and follows the same security practices implemented during the governance transition period for Aave V1 and V2.

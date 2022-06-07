@@ -4,9 +4,9 @@ description: Aave's deployment on the Harmony
 
 # Harmony
 
-[Snapshot to deploy V2 on Harmony](https://snapshot.org/#/aave.eth/proposal/QmYYBedL9aRFdC5DUgjN3QMoYxvJhAUBb2sEyhFuVQZbLG) passed with a success. But with V3 launch soon deployments were postponed.
+[Snapshot to deploy V2 on Harmony](https://snapshot.org/#/aave.eth/proposal/QmYYBedL9aRFdC5DUgjN3QMoYxvJhAUBb2sEyhFuVQZbLG) passed with a success. In anticipation of the Aave Protocol V3 launch, the Aave Protocol v2 deployment on Harmony was dropped in favour of the Aave Protocol V3 deployment.
 
-Now the Aave Protocol V3 has been deployed on Harmony. Harmony is a sharded proof-of-stake blockchain, operated by over 100 external validators. It is fully EVM and Ethereum tooling compatible. Read more about [👉🏻 Harmony](https://www.harmony.one/)
+Harmony is a sharded proof-of-stake blockchain, operated by over 100 external validators. It is fully EVM and Ethereum tooling compatible. Read more about [👉🏻 Harmony](https://www.harmony.one/)
 
 ### Risk Parameters
 
@@ -41,5 +41,5 @@ Chainlink oracles are available on Harmony based on [👉🏻 address repository
 | [WETH](https://explorer.harmony.one/address/0x6983D1E6DEf3690C4d616b13597A09e6193EA013) | [aHarWETH](https://explorer.harmony.one/address/0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8) | [sHarWETH](https://explorer.harmony.one/address/0xD8Ad37849950903571df17049516a5CD4cbE55F6) | [vHarWETH](https://explorer.harmony.one/address/0x0c84331e39d6658Cd6e6b9ba04736cC4c4734351) | [InterestRateStrategy](https://explorer.harmony.one/address/0x4aa694e6c06d6162d95be98a2df6a521d5a7b521) |
 
 ### Disclaimer
-
-During an initial bootstrapping phase, the Harmony deployment is controlled by a multisig and follows the same security practices implemented during the governance transition period for Aave V1 and V2.
+{% hint style=“info” %} Aave team do not hold any keys to the multisig controlling Aave V3 markets on Harmony {% endhint %}
+During an initial bootstrapping phase, the Harmony deployment is controlled by a multisig (keys held by Harmony community) and follows the same security practices implemented during the governance transition period for Aave V1 and V2.

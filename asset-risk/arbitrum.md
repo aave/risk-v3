@@ -4,7 +4,7 @@ description: Aave's deployment on the Arbitrum
 
 # Arbitrum
 
-Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0x7c6261b04115e79c63cffb1602295836df36883fc76fc899bce3345c2beaeba3), the Aave Protocol V3 has been deployed on Arbitrum One.Arbitrum is the leading Ethereum Rollup, with hundreds of live apps including most top Ethereum apps and infrastructure. Arbitrum's TVL accounts for 47.8% of TVL across all Ethereum L2s tracked by L2Beat. You can read more [👉🏻 here](https://portal.arbitrum.one)
+Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0x7c6261b04115e79c63cffb1602295836df36883fc76fc899bce3345c2beaeba3), V3 of the Aave Protocol has been deployed on Arbitrum One. Arbitrum is the leading Ethereum Rollup, with hundreds of live apps, including most top Ethereum apps and infrastructure. Arbitrum’s TVL accounts for 47.8% of TVL across all Ethereum L2s tracked by L2Beat. You can read more [👉🏻 here](https://portal.arbitrum.one)
 
 
 ### Risk Parameters
@@ -50,6 +50,6 @@ Chainlink oracles are available on Arbitrum based on [👉🏻 address repositor
 | [WETH](https://arbiscan.io/address/0x82aF49447D8a07e3bd95BD0d56f35241523fBab1) | [aArbWETH](https://arbiscan.io/address/0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8) | [sArbWETH](https://arbiscan.io/address/0xD8Ad37849950903571df17049516a5CD4cbE55F6#code) | [vArbWETH](https://arbiscan.io/address/0x0c84331e39d6658Cd6e6b9ba04736cC4c4734351) | [InterestRateStrategy](https://arbiscan.io/address/0x9b34E3e183c9b0d1a08fF57a8fb59c821616295f#code) |
 
 ### Disclaimer
+{% hint style=“info” %} Aave team do not hold any keys to the multisig controlling Aave V3 markets on Arbitrum {% endhint %}
 
-During an initial bootstrapping phase, the Arbitrum deployment is controlled by a multisig and follows the same security practices implemented during the governance transition period for Aave V1 and V2.
-
+During an initial bootstrapping phase, the Arbitrum deployment is controlled by a multisig (keys held by Arbitrum community) and follows the same security practices implemented during the governance transition period for Aave V1 and V2.

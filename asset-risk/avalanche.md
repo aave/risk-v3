@@ -4,7 +4,7 @@ description: Aave's deployment on the Avalanche C-Chain
 
 # Avalanche
 
-Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0x0f682decaf1657b36110beb6914a89dc16b305b163d7a75c22848f059ee9bd24), new Aave Protocol V3 markets has been deployed on Avalanche. Avalanche is one of the fastest smart contracts platforms in the blockchain industry, as measured by time-to-finality, and has the most validators securing its activity of any proof-of-stake protocol. Avalanche’s C-Chain is an instance of the EVM running with Avalanche’s consensus.
+Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0x0f682decaf1657b36110beb6914a89dc16b305b163d7a75c22848f059ee9bd24), V3 of the Aave Protocol has been deployed on Avalanche. Avalanche is one of the fastest smart contracts platforms in the blockchain industry, as measured by time-to-finality, and has the most validators securing its activity out of any proof-of-stake protocol. Avalanche’s C-Chain is an instance of the EVM running with Avalanche’s consensus.
 
 ### Risk Parameters
 
@@ -51,4 +51,6 @@ Chainlink oracles are available on Avalanche based on [this address repository](
 
 ### Disclaimer
 
-During an initial bootstrapping phase, the Avalanche deployment is controlled by a multisig and follows the same security practices implemented during the governance transition period for Aave V1 and V2.
+{% hint style=“info” %} Aave team do not hold any keys to the multisig controlling Aave V3 markets on Avalanche {% endhint %}
+
+During an initial bootstrapping phase, the Avalanche deployment is controlled by a multisig (keys held by Avalanche community) and follows the same security practices implemented during the governance transition period for Aave V1 and V2.
