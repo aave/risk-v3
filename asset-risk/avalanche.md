@@ -25,6 +25,17 @@ The reserve factor aka treasury collector contract can be found at [0xaCbE7d574E
 
 Chainlink oracles are available on Avalanche based on [this address repository](https://docs.chain.link/docs/avalanche-price-feeds/).
 
+| Price Pair | Deviation Threshold | Chainlink Feed |
+| :--------: | :-----------------: | :------------: |
+|  AVAX/USD  |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/avax-usd |
+|  AAVE/USD  |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/aave-usd |
+|  DAI/USD   |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/dai-usd |
+|  USDT/USD  |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/usdt-usd |
+|  LINK/USD  |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/link-usd |
+|  USDC/USD  |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/usdc-usd |
+|  BTC/USD   |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/btc-usd |
+|  ETH/USD   |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/eth-usd |
+
 ### Related Smart Contracts
 
 | Token   | AToken | Stable Debt Token  | Variable Debt Token  | Interest Rate Strategy |

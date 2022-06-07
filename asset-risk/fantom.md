@@ -27,6 +27,19 @@ The reserve factor aks treasury collector contract can be found at [0xc0F0cFBbd0
 
 Chainlink oracles are available on Fantom based on [👉🏻 address repository](https://docs.chain.link/docs/fantom-price-feeds/).
 
+| Price Pair | Deviation Threshold | Chainlink Feed |
+| :--------: | :-----------------: | :------------: |
+|  FTM/USD   |      0.1%           | https://data.chain.link/fantom/mainnet/crypto-usd/ftm-usd |
+|  AAVE/USD  |      0.5%           | https://data.chain.link/fantom/mainnet/crypto-usd/aave-usd |
+|  DAI/USD   |      0.1%           | https://data.chain.link/fantom/mainnet/crypto-usd/dai-usd |
+|  USDT/USD  |      0.1%           | https://data.chain.link/fantom/mainnet/crypto-usd/usdt-usd |
+|  LINK/USD  |      0.5%           | https://data.chain.link/fantom/mainnet/crypto-usd/link-usd |
+|  USDC/USD  |      0.1%           | https://data.chain.link/fantom/mainnet/crypto-usd/usdc-usd |
+|  BTC/USD   |      0.1%           | https://data.chain.link/fantom/mainnet/crypto-usd/btc-usd |
+|  ETH/USD   |      0.1%           | https://data.chain.link/fantom/mainnet/crypto-usd/eth-usd |
+|  CRV/USD   |      0.5%           | https://data.chain.link/fantom/mainnet/crypto-usd/crv-usd |
+|  SUSHI/USD |      0.5%           | https://data.chain.link/fantom/mainnet/crypto-usd/sushi-usd |
+
 ### Related Smart Contracts
 
 | Token   | AToken | Stable Debt Token  | Variable Debt Token  | Interest Rate Strategy |

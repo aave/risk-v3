@@ -26,6 +26,16 @@ The reserve factor aka treasury collector contract can be found at [0xC3301b30f4
 
 Chainlink oracles are available on Arbitrum based on [👉🏻 address repository](https://docs.chain.link/docs/arbitrum-price-feeds/).
 
+| Price Pair | Deviation Threshold | Chainlink Feed |
+| :--------: | :-----------------: | :------------: |
+|  AAVE/USD  |      0.5%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/aave-usd |
+|  DAI/USD   |      0.1%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/dai-usd |
+|  USDT/USD  |      0.1%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/usdt-usd |
+|  LINK/USD  |      0.2%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/link-usd |
+|  USDC/USD  |      0.1%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/usdc-usd |
+|  BTC/USD   |      0.05%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/btc-usd |
+|  ETH/USD   |      0.05%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/eth-usd |
+
 ### Related Smart Contracts
 
 | Token   | AToken | Stable Debt Token  | Variable Debt Token  | Interest Rate Strategy |

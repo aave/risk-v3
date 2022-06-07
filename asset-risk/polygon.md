@@ -37,6 +37,20 @@ The reserve factor collector contract can be found at [0x73D435AFc15e35A9aC63B2a
 
 Chainlink oracles are available on Polygon based on [this address repository](https://docs.chain.link/docs/matic-addresses/).
 
+| Price Pair | Deviation Threshold | Chainlink Feed |
+| :--------: | :-----------------: | :------------: |
+|  MATIC/USD |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/matic-usd |
+|  AAVE/USD  |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/aave-usd |
+|  DAI/USD   |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/dai-usd |
+|  USDT/USD  |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/usdt-usd |
+|  LINK/USD  |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/link-usd |
+|  USDC/USD  |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/usdc-usd |
+|  AGEUR/USD |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/ageur-usd |
+|  BTC/USD   |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/btc-usd |
+|  ETH/USD   |      0%           | https://data.chain.link/polygon/mainnet/crypto-usd/eth-usd |
+|  CRV/USD   |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/crv-usd |
+|  SUSHI/USD |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/sushi-usd |
+
 ### Related Smart Contracts
 
 | Token   | AToken | Stable Debt Token  | Variable Debt Token  | Interest Rate Strategy |
