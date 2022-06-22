@@ -88,6 +88,9 @@ USDT and sUSD have increased risk exposure due to the risk of a single point of 
 
 Overall, stablecoins are mostly used for borrowing, while volatile assets, which many users are long on, are mostly used as collateral. Hence, users of the protocol still benefit from the addition of these stablecoins, and their risks are mitigated by the fact they cannot be used as collateral.### From Risks to Risk Parameters
 
+
+### For risks to risk parameters
+
 Market risks have the most direct impact on the risk parameters:
 
 #### Liquidity
