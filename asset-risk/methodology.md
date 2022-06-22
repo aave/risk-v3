@@ -25,13 +25,11 @@ These ratings are calculated per sub-factor and then aggregated via a rounded up
 
 **Smart contract risk** focuses on measuring the technical security of the underlying code for any asset. Only code for assets that have undergone rigorous audits by well-respected auditors are appropriate for the Aave Protocol; regardless of audits, smart contract risk remains (i.e., it can never be eliminated fully) and users must be vigilant in assessing such risk. Bug bounties can be used to help reduce smart contract risk. The **maturity** of any code can be assessed based on the number of days and the number of transactions with a particular smart contract — use, community, development and, in some instances, reliability are proxies for how battle-tested the code is.
 
-Smart contract hacks have already resulted in millions of funds lost; accordingly, tokens with the highest smart-contract risk (i.e., D+ and below), should not be used as collateral. For clarity, tokens with a risk rating below D should not be integrated in the protocol.
+Smart contract hacks have already resulted in millions of funds lost. Accordingly, tokens with the highest smart-contract risk (i.e., D+ and below), are extremely risky collaterals. They should only be onboarded with strict risk mitigation such as supply caps or isolation mode.
 
 ### Counter-party Risk
 
 **Counter-party risk** assesses qualitatively how and by who the currency is governed. There are different degrees of governance decentralisation that may give direct control over funds (e.g., as backing) or attack vectors to the governance architecture, which could expose control and funds. Counterparty risk is determined by the level of **centralisation**, which is measured by the number of parties that control a token’s protocol, as well as the number of holders and the level of **trust** in the entity, project, or processes.
-
-Tokens with a high counterparty risk (i.e., below D+) should be disqualified for use as collateral.
 
 ### Market Risk
 
@@ -49,4 +47,6 @@ Finally, we also consider the **market capitalisation** representing the size of
 
 Market risks are used to calibrate the model’s [risk parameters](risk-parameters.md). Volatility helps to define the required level of collateralisation, (i.e., the [Loan to Value](risk-parameters.md#loan-to-value)). The liquidity risks are contained by liquidation incentives (i.e., the [liquidation threshold](risk-parameters.md#liquidation-threshold) and [bonus](risk-parameters.md#liquidation-bonus)).
 
-Tokens with high market risk might only qualify as collateral in *Isolation Mode*, which restricts them only back *Isolated Stablecoins*
+
+
+Tokens with scores of D+ or below in any of these categories are very risky, which makes them poor quality collaterals. They should only be onboarded with strict risk mitigation either as borrow only or as collateral with a *Supply* or in *Isolation Mode*, which restricts them only back *Isolated Stablecoins*.
