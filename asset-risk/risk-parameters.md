@@ -1,8 +1,8 @@
 # Parameters
 
-Each asset within the Aave Protocol has specific values related to their risk, which influences how they are supplied and borrowed within the protocol. The calibration of the parameters for V3 is more intensive and includes additional risk parameters relating to security, governance, and the markets. Assets with security concerns around their smart contract should not  be considered for integration since these risks are very difficult to mitigate or control. Similarly, tokens with high risk exposure to single counterparties should not be supported as collateral by the Aave community.
+Each asset within the Aave Protocol has specific values related to their risk, which influences how they are supplied and borrowed within the protocol. V3 has better risk mitigations tools with additional risk parameters relating to security, governance, and the markets. 
 
-It is crucial for Aave community to do proper risk analysis for each asset that is supported by the Aave Protocol. New assets with relatively higher risk should be supported in Isolation Mode. 
+It is crucial for Aave community understand the underlying risk of each asset: assess the smart contracts security, understand the risks of centralisation and market risks; as onboarded assets, onboard their risks to the Aave Protocol. Aave V3 offers new risk mitigation parameters that allow the onboarding of assets highly exposed to these risk factors with limits and isolation mode. 
 
 
 {% hint style=“info” %}All the assets supported by the Aave Protocol are added via the Aave Governance proposal or via the Asset listing admins selected by the Aave Governance.
