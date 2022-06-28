@@ -4,6 +4,6 @@ description: Validation of the algorithms via mathematical methods
 
 # Formal Verification
 
-### [Cetora 3/12/2020](https://github.com/aave/protocol-v2/blob/master/audits/Certora-FV-aave-v2-03-12-2020.pdf)
+### [Cetora 1/26/2022](https://app.aave.com/#/governance/66-QmXz9i8zYz2g9XpTP63eKYPZxPftF76hQXr2jzWTMX7zY4)
 
-![](<../.gitbook/assets/Screenshot 2021-05-17 at 21.24.16 (1).png>)
+![](<../.gitbook/assets/certora.png)
