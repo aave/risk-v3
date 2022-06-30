@@ -1,16 +1,21 @@
-# Parameters
+# Risk Parameters
 
-Each asset within the Aave Protocol has specific values related to their risk, which influences how they are supplied and borrowed within the protocol. V3 has better risk mitigations tools with additional risk parameters relating to security, governance, and the markets. 
+Each asset within the Aave Protocol has specific values related to their risk, which influences how they are supplied and borrowed within the protocol. V3 has better risk mitigations tools with additional risk parameters relating to security, governance, and the markets.
 
-It is crucial for Aave community understand the underlying risk of each asset: assess the smart contracts security, understand the risks of centralisation and market risks; as onboarded assets, onboard their risks to the Aave Protocol. Aave V3 offers new risk mitigation parameters that allow the onboarding of assets highly exposed to these risk factors with limits and isolation mode. 
+It is crucial for Aave community understand the underlying risk of each asset: assess the smart contracts security, understand the risks of centralisation and market risks. Onboarded assets, onboard their risks to the Aave Protocol. Aave V3 offers new risk mitigation parameters that allow the onboarding of assets highly exposed to these risk factors with limits and isolation mode.
 
+All the assets supported by the Aave protocol are added via the Aave Governance proposal or via the Asset listing admins selected by the Aave Governance.
 
-{% hint style=“info” %}All the assets supported by the Aave Protocol are added via the Aave Governance proposal or via the Asset listing admins selected by the Aave Governance.
+You can find the risk parameters per markets in:
+
+* [Polygon](polygon.md)
+* [Avalanche](avalanche.md)
 
 To retrieve the relevant values directly from the smart contracts, see [this section of the developer docs](https://docs.aave.com/developers/the-core-protocol/lendingpool#getreservedata).
 
 ## Risk Parameters Analysis
-The risk parameters mitigate the market risks of the assets supported by the Aave Protocol. Each borrow is based on an over-collateralization with a different asset that may, depending on the asset, be subject to volatility. Sufficient margin and incentives are needed for the position to remain collateralised in the event of adverse market conditions. If the value of the collateral falls bellow a predetermined threshold, a portion of it will be auctioned as a `LIQUIDATION_BONUS` to repay a portion of the debt position and keep the ongoing borrow collateralised.
+
+The risk parameters mitigate the market risks of the assets supported by the Aave protocol. Each borrow is based on an over-collateralization with a different asset that may, be subject to volatility. Sufficient margin and incentives are needed for the position to remain collateralised in the event of adverse market conditions. If the value of the collateral falls bellow a predetermined threshold, a portion of it will be auctioned as a `LIQUIDATION_BONUS` to repay a portion of the debt position and keep the ongoing borrow collateralised.
 
 Market risks can be mitigated through Aave’s risk parameters, which define collateralisation and liquidation rules.
 
@@ -18,38 +23,41 @@ These parameters are calibrated on a per asset basis to account for the specific
 
 The Aave Protocol V3 introduces 👇🏻 new (additional) risk parameters to provide a higher level of protection against insolvency.
 
+### Supply Caps
 
-### Supply Caps:
-Supply caps define the maximum amount of an asset which can be supplied to the protocol. Supply caps can be used to limit the protocol’s exposure to riskier assets and prevents against infinite minting exploits. A supply cap is an optional parameter, and the value will depend on the circulating and maximum supply of the asset.
+Supply caps define the maximum amount of an asset which can be supplied to the protocol. Supply caps can be used to limit the protocol’s exposure to riskier assets and protect against infinite minting exploits. A supply cap is an optional parameter, and the value will depend on on-chain liquidity of the asset and total volume of collateral assets in the pool.
 
 ### Borrow Caps
-Borrow caps define the maximum amount of an asset which can be borrowed. Borrow caps can be used to prevent traditional and flash borrowing of an asset which may experience a price exploit and lead to protocol insolvency. A borrow cap is an optional parameter, and the value will depend on the circulating and maximum supply of the asset.
+
+Borrow caps define the maximum amount of an asset which can be borrowed. Borrow caps can be used to prevent traditional and flash borrowing of an asset which may experience a price exploit and lead to protocol insolvency. A borrow cap is an optional parameter, and the value will depend on-chain liquidity of the asset and total volume of borrowed assets in the pool.
 
 ### Isolation Mode
-Isolation mode can be used to limit the systemic risk of listing riskier assets. Isolation mode limits an asset to only borrow isolated stablecoins and only use a single isolated asset as collateral at a time.
-More info on isolation mode can be found [here](https://docs.aave.com/developers/whats-new/isolation-mode).
+
+Isolation mode can be used to limit the systemic risk of listing riskier assets. Isolation mode limits an asset to only borrow isolated stablecoins and only use a single isolated asset as collateral at a time. More info on isolation mode can be found [here](https://docs.aave.com/developers/whats-new/isolation-mode).
 
 ### Siloed Mode
-In V3, new assets with potentially manipulatable oracles (e.g., illiquid Uni V3 pairs where the price can be affected drastically by a single trade) can be listed in Siloed Mode to limit the risk of overall solvency of the protocol. A siloed asset on the Aave Protocol restricts the borrower to single borrows only (i.e., a user borrowing a siloed asset cannot borrow any other asset).
+
+In V3, new assets with potentially manipulatable oracles (e.g., illiquid Uni V3 pairs where the price can be affected drastically by a single trade) can be listed in Siloed Mode to limit the overall risk of insolvency of the protocol. A siloed asset on the Aave Protocol restricts the borrower to single borrows only (i.e., a user borrowing a siloed asset cannot borrow any other asset).
 
 ### eMode
-Efficient Mode (”eMode”) allows assets which are correlated in price (e.g., DAI, USDC, and USDT) to be listed in the same eMode category and thus maximise capital efficiency by allowing higher LTV when both the borrowed and collateral asset belong to the same eMode category. Currently, only a single eMode category is defined in the Aave Protocol V3 markets - Stablecoins, category 1.
+
+Efficient Mode (”eMode”) allows assets which are correlated in price (e.g., DAI, USDC, and USDT) to be listed in the same eMode category which maximises capital efficiency by allowing higher LTVs when both the borrowed and collateral asset belong to the same eMode category. Currently, only a single eMode category is defined in the Aave Protocol V3 markets - Stablecoins, category 1.
 
 V3 allows `RISK_ADMINS` and `POOL_ADMIN`, selected by Aave Governance, to configure up to 255 eMode categories, with each `EModeCategory` having the following risk management parameters:
 
-- LTV (loan to value)
-- Liquidation Threshold
-- Liquidation Bonus
-- Custom price oracle (optional)
+* LTV (loan to value)
+* Liquidation Threshold
+* Liquidation Bonus
+* Custom price oracle (optional)
 
 Other risk parameters from V2
 
 ### Loan to Value
+
 The Loan to Value (”LTV”) ratio defines the maximum amount of assets that can be borrowed with a specific collateral. It is expressed as a percentage (e.g., at LTV=75%, for every 1 ETH worth of collateral, borrowers will be able to borrow 0.75 ETH worth of the corresponding currency). Once a borrow occurs, the LTV evolves with market conditions.
 
-{% hint style=“info” %}
-For each wallet, the Liquidation Threshold is calculate as the weighted average of the Liquidation Thresholds of the collateral assets and their value:
-$$Liquidation \: Threshold= \frac{ \sum{Collateral_i \: in \: ETH \: \times \: Liquidation \: Threshold_i}}{Total \: Collateral \: in \: ETH \:}$$
+{% hint style="info" %}
+For each wallet, the Liquidation Threshold is calculate as the weighted average of the Liquidation Thresholds of the collateral assets and their value: $$Liquidation \: Threshold= \frac{ \sum{Collateral_i \: in \: ETH \: \times \: Liquidation \: Threshold_i}}{Total \: Collateral \: in \: ETH \:}$$
 {% endhint %}
 
 ### Liquidation Threshold
@@ -58,19 +66,25 @@ The liquidation threshold is the percentage at which a position is defined as un
 
 The delta between the LTV and the Liquidation Threshold is a safety mechanism in place for borrowers.
 
-{% hint style=“info” %} For each wallet, the Liquidation Threshold is calculate as the weighted average of the Liquidation Thresholds of the collateral assets and their value:
+{% hint style="info" %}
+For each wallet, the Liquidation Threshold is calculate as the weighted average of the Liquidation Thresholds of the collateral assets and their value:
 
-$$Liquidation \: Threshold= \frac{ \sum{Collateral_i \: in \: ETH \: \times \: Liquidation \: Threshold_i}}{Total \: Collateral \: in \: ETH \:}$$ {% endhint %}
+$$Liquidation \: Threshold= \frac{ \sum{Collateral_i \: in \: ETH \: \times \: Liquidation \: Threshold_i}}{Total \: Collateral \: in \: ETH \:}$$
+{% endhint %}
 
-### Liquidation Bonus
+### Liquidation Penalty
 
-The liquidation bonus is a bonus rendered on the price of assets of the collateral when liquidators purchase it as part of the liquidation of a loan that has passed the liquidation threshold.
+The liquidation penalty is a fee rendered on the price of assets of the collateral when liquidators purchase it as part of the liquidation of a loan that has passed the liquidation threshold.
+
+### Liquidation Factor
+
+The liquidation factor directs a share of the liquidation penalty to a collector contract from the ecosystem treasury.&#x20;
 
 ### Health Factor
 
 For each wallet, these risks parameters enable the calculation of the health factor:
 
-$$H_f = \frac{ \sum{Collateral_i \: in \: ETH \: \times \: Liquidation \: Threshold_i}}{Total \: Borrows \: in \: ETH}$$&#x20;
+$$H_f = \frac{ \sum{Collateral_i \: in \: ETH \: \times \: Liquidation \: Threshold_i}}{Total \: Borrows \: in \: ETH}$$
 
 When $$H_f < 1$$ the position may be liquidated to maintain solvency as described in the diagram below.
 
@@ -78,24 +92,23 @@ When $$H_f < 1$$ the position may be liquidated to maintain solvency as describe
 
 ### Reserve Factor
 
-The reserve factor allocates a share of the protocol’s interests to a collector contract as reserve for the ecosystem. This reserve is new feature introduced to V2 and is used to sustain the DAO and to pay protocol contributors. It is comprised of various assets including AAVE.
+The reserve factor allocates a share of the protocol’s interests to a collector contract from the ecosystem treasury.&#x20;
 
 Aave’s solvency risk is covered by the Safety Module, with incentives originating from the ecosystem reserve. As such, the Reserve Factor is a risk premium calibrated based on the overall risk of the asset. Stablecoins are the least risky assets with a lower reserve factor while volatile assets hold more risk and have a higher factor.
 
 ### Collaterals
 
-USDT and sUSD have increased risk exposure due to the risk of a single point of failure in their governance. Their counterparty risk is too high, both in terms of centralisation and trust. For this reason, we should not consider them to warrant the solvency of the protocol. Accordingly, these assets are limited to be used as collateral in Isolation Mode. On the other hand, agEUR and jEUR are decentralised; however, these assets have little battle-testing and cannot be used as collateral.
+USDT and sUSD have increased risk exposure due to the risk of a single point of failure in their governance. Their counterparty risk is too high, both in terms of centralisation and trust. For this reason, they cannot warrant the solvency of the protocol. Accordingly, these assets are limited to be used as collateral in Isolation Mode. On the other hand, agEUR and jEUR are decentralised; however, these assets have little battle-testing and cannot be used as collateral.
 
-Overall, stablecoins are mostly used for borrowing, while volatile assets, which many users are long on, are mostly used as collateral. Hence, users of the protocol still benefit from the addition of these stablecoins, and their risks are mitigated by the fact they cannot be used as collateral.### From Risks to Risk Parameters
+Overall, stablecoins are used both for borrowing and as collateral, while volatile assets, which many users are long on, are mostly used as collateral. Hence, users of the protocol still benefit from the addition of these stablecoins, and their risks are mitigated by the fact they cannot be used as collateral.### From Risks to Risk Parameters
 
-
-### For risks to risk parameters
+### From Risks to Risk Parameters
 
 Market risks have the most direct impact on the risk parameters:
 
 #### Liquidity
 
-Liquidity is based on the volume on the markets, which is key for the liquidation process. This can be mitigated through the liquidation parameters (i.e., the lower the liquidity, the higher the incentives).
+Liquidity based on on-chain liquidity and trading volume, is key for the liquidation process. These can be mitigated through the caps and liquidation parameters (i.e., the lower the liquidity, the higher the incentives).
 
 #### Volatility
 
