@@ -13,6 +13,8 @@
 - [Polygon](asset-risk/polygon.md)
 - [Avalanche](asset-risk/avalanche.md)
 - [Arbitrum](asset-risk/arbitrum.md)
+- [Fantom](asset-risk/fantom.md)
+- [Optimism](asset-risk/optimism.md)
 
 ## LIQUIDITY RISK
 
