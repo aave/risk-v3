@@ -15,6 +15,7 @@
 - [Arbitrum](asset-risk/arbitrum.md)
 - [Fantom](asset-risk/fantom.md)
 - [Optimism](asset-risk/optimism.md)
+- [Harmony](asset-risk/harmony.md)
 
 ## LIQUIDITY RISK
 
