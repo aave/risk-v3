@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Aave's Risk Framework](README.md)
+* [Aave V3](README.md)
 
 ## Asset Risk
 
