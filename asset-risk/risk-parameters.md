@@ -78,7 +78,7 @@ The liquidation penalty is a fee rendered on the price of assets of the collater
 
 ### Liquidation Factor
 
-The liquidation factor directs a share of the liquidation penalty to a collector contract from the ecosystem treasury.&#x20;
+The liquidation factor directs a share of the liquidation penalty to a collector contract from the ecosystem treasury.
 
 ### Health Factor
 
@@ -92,7 +92,7 @@ When $$H_f < 1$$ the position may be liquidated to maintain solvency as describe
 
 ### Reserve Factor
 
-The reserve factor allocates a share of the protocol’s interests to a collector contract from the ecosystem treasury.&#x20;
+The reserve factor allocates a share of the protocol’s interests to a collector contract from the ecosystem treasury.
 
 Aave’s solvency risk is covered by the Safety Module, with incentives originating from the ecosystem reserve. As such, the Reserve Factor is a risk premium calibrated based on the overall risk of the asset. Stablecoins are the least risky assets with a lower reserve factor while volatile assets hold more risk and have a higher factor.
 
@@ -100,7 +100,7 @@ Aave’s solvency risk is covered by the Safety Module, with incentives originat
 
 USDT and sUSD have increased risk exposure due to the risk of a single point of failure in their governance. Their counterparty risk is too high, both in terms of centralisation and trust. For this reason, they cannot warrant the solvency of the protocol. Accordingly, these assets are limited to be used as collateral in Isolation Mode. On the other hand, agEUR and jEUR are decentralised; however, these assets have little battle-testing and cannot be used as collateral.
 
-Overall, stablecoins are used both for borrowing and as collateral, while volatile assets, which many users are long on, are mostly used as collateral. Hence, users of the protocol still benefit from the addition of these stablecoins, and their risks are mitigated by the fact they cannot be used as collateral.### From Risks to Risk Parameters
+Overall, stablecoins are used both for borrowing and as collateral, while volatile assets, which many users are long on, are mostly used as collateral. Hence, users of the protocol still benefit from the addition of these stablecoins, and their risks are mitigated by the fact they cannot be used as collateral.
 
 ### From Risks to Risk Parameters
 
