@@ -17,17 +17,17 @@ Liquidity risk materialises when utilisation is high, and this becomes more prob
 
 The interest rate$$R_t$$follows the model:
 
-$$if \hspace{1mm} U < U_{optimal}:  \hspace{1cm}  R_t = R_0 + \frac{U_t}{U_{optimal}} R_{slope1}$$  &#x20;
+$$if \hspace{1mm} U \leq U_{optimal}:  \hspace{1cm}  R_t = R_0 + \frac{U_t}{U_{optimal}} R_{slope1}$$  &#x20;
 
-$$if \hspace{1mm} U \geq  U_{optimal}:  \hspace{1cm} R_t = R_0 + R_{slope1} + \frac{U_t-U_{optimal}}{1-U_{optimal}}R_{slope2}$$
+$$if \hspace{1mm} U > U_{optimal}:  \hspace{1cm} R_t = R_0 + R_{slope1} + \frac{U_t-U_{optimal}}{1-U_{optimal}}R_{slope2}$$
 
 
 In the borrow rate technical implementation, the [calculateCompoundedInterest](https://github.com/aave/aave-v3-core/blob/e46341caf815edc268893f4f9398035f242375d9/contracts/protocol/libraries/math/MathUtils.sol#L51) method relies on an approximation that mostly affects high interest rates. The resulting actual borrow rate is as follows:
 
 &#x20;$$Actual APY = (1+Theoretical APY/secsperyear)^{secsperyear}-1$$
 
-- When $$U < U_{optimal}$$ the borrow interest rates increase slowly with utilisation
-- When $$U \geq  U_{optimal}$$ the borrow interest rates increase sharply with utilisation to above 50% APY if the liquidity is fully utilised.
+- When $$U \leq U_{optimal}$$ the borrow interest rates increase slowly with utilisation
+- When $$U > U_{optimal}$$ the borrow interest rates increase sharply with utilisation to above 50% APY if the liquidity is fully utilised.
 
 Both the variable and stable interest models, are derived from the formula above from the [Whitepaper](https://github.com/aave/aave-protocol/blob/master/docs/Aave\_Protocol\_Whitepaper\_v1\_0.pdf) with different parameters for each asset.
 
