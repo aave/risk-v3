@@ -34,21 +34,25 @@ The reserve factor collector contract can be found at [0x73D435AFc15e35A9aC63B2a
 
 ### Price Feed
 
-Chainlink oracles are available on Polygon based on [this address repository](https://docs.chain.link/docs/matic-addresses/).
+The price update frequency results from the liquidation strategy. We follow a margin method, in which prices are refreshed every time the deviation crosses a certain threshold. We use [Chainlink](https://chain.link)’s decentralised oracles for the price feeds.
 
-| Price Pair | Deviation Threshold | Chainlink Feed |
-| :--------: | :-----------------: | :------------: |
-|  MATIC/USD |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/matic-usd |
-|  AAVE/USD  |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/aave-usd |
-|  DAI/USD   |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/dai-usd |
-|  USDT/USD  |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/usdt-usd |
-|  LINK/USD  |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/link-usd |
-|  USDC/USD  |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/usdc-usd |
-|  AGEUR/USD |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/ageur-usd |
-|  BTC/USD   |      0.1%           | https://data.chain.link/polygon/mainnet/crypto-usd/btc-usd |
-|  ETH/USD   |      0%           | https://data.chain.link/polygon/mainnet/crypto-usd/eth-usd |
-|  CRV/USD   |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/crv-usd |
-|  SUSHI/USD |      0.5%           | https://data.chain.link/polygon/mainnet/crypto-usd/sushi-usd |
+The Polygon Chainlink oracles are available in the following [address repository](https://docs.chain.link/data-feeds/price-feeds/addresses/?network=polygon).
+
+| Pair Data Feed                                                                | Deviation Threshold | Oracle Contract Address                                                                                                  |
+| :---------------------------------------------------------------------------: | :-----------------: | :----------------------------------------------------------------------------------------------------------------------: |
+| [DAI/USD](https://data.chain.link/polygon/mainnet/stablecoins/dai-usd)        | 0%                  | [0x4746DeC9e833A82EC7C2C1356372CcF2cfcD2F3D](https://polygonscan.com/address/0x4746DeC9e833A82EC7C2C1356372CcF2cfcD2F3D) |
+| [EURS/USD](https://data.chain.link/polygon/mainnet/fiat/eur-usd)              | 0%                  | [0x73366Fe0AA0Ded304479862808e02506FE556a98](https://polygonscan.com/address/0x73366Fe0AA0Ded304479862808e02506FE556a98) |
+| [miMATIC/USD](https://data.chain.link/polygon/mainnet/crypto-usd/mimatic-usd) | 1%                  | [0xd8d483d813547CfB624b8Dc33a00F2fcbCd2D428](https://polygonscan.com/address/0xd8d483d813547CfB624b8Dc33a00F2fcbCd2D428) |
+| [USDC/USD](https://data.chain.link/polygon/mainnet/stablecoins/usdc-usd)      | 0%                  | [0xfE4A8cc5b5B2366C1B58Bea3858e81843581b2F7](https://polygonscan.com/address/0xfE4A8cc5b5B2366C1B58Bea3858e81843581b2F7) |
+| [USDT/USD](https://data.chain.link/polygon/mainnet/stablecoins/usdt-usd)      | 0%                  | [0x0A6513e40db6EB1b165753AD52E80663aeA50545](https://polygonscan.com/address/0x0A6513e40db6EB1b165753AD52E80663aeA50545) |
+| [AAVE/USD](https://data.chain.link/polygon/mainnet/crypto-eth/aave-usd)       | 0%                  | [0x72484B12719E23115761D5DA1646945632979bB6](https://polygonscan.com/address/0x72484B12719E23115761D5DA1646945632979bB6) |
+| [BAL/USD](https://data.chain.link/polygon/mainnet/crypto-usd/bal-usd)         | 0.5%                | [0xD106B538F2A868c28Ca1Ec7E298C3325E0251d66](https://polygonscan.com/address/0xD106B538F2A868c28Ca1Ec7E298C3325E0251d66) |
+| [DPI/USD](https://data.chain.link/polygon/mainnet/crypto-usd/dpi-usd)         | 1%                  | [0x2e48b7924FBe04d575BA229A59b64547d9da16e9](https://polygonscan.com/address/0x2e48b7924FBe04d575BA229A59b64547d9da16e9) |
+| [LINK/USD](https://data.chain.link/polygon/mainnet/crypto-usd/link-usd)       | 0%                  | [0xd9FFdb71EbE7496cC440152d43986Aae0AB76665](https://polygonscan.com/address/0xd9FFdb71EbE7496cC440152d43986Aae0AB76665) |
+| [SUSHI/USD](https://data.chain.link/polygon/mainnet/crypto-usd/sushi-usd)     | 0.5%                | [0x49B0c695039243BBfEb8EcD054EB70061fd54aa0](https://polygonscan.com/address/0x49B0c695039243BBfEb8EcD054EB70061fd54aa0) |
+| [BTC/USD](https://data.chain.link/polygon/mainnet/crypto-usd/btc-usd)         | 0%                  | [0xc907E116054Ad103354f2D350FD2514433D57F6f](https://polygonscan.com/address/0xc907E116054Ad103354f2D350FD2514433D57F6f) |
+| [ETH/USD](https://data.chain.link/polygon/mainnet/crypto-usd/eth-usd)         | 0%                  | [0xF9680D99D6C9589e2a93a78A04A279e509205945](https://polygonscan.com/address/0xF9680D99D6C9589e2a93a78A04A279e509205945) |
+| [MATIC/USD](https://data.chain.link/polygon/mainnet/crypto-usd/matic-usd)     | 0%                  | [0xAB594600376Ec9fD91F8e885dADF0CE036862dE0](https://polygonscan.com/address/0xAB594600376Ec9fD91F8e885dADF0CE036862dE0) |
 
 ### Related Smart Contracts
 

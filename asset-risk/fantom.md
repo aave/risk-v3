@@ -6,6 +6,8 @@ description: Aave's deployment on the Fantom
 
 Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/proposal/0x4a8ff1d3876390cde6b43fc93c0135de67fb6aa68a23e8eefeb770fe95735932), V3 of the Aave Protocol has been deployed on Fantom. Fantom is an EVM-compatible L1 chain that offers fast finality, low transaction fees, and has the [6th largest TVL according to DefiLlama](https://defillama.com/chains).
 
+Per the community, the [Fantom market has been frozen](https://snapshot.org/#/aave.eth/proposal/0xeefcd76e523391a14cfd0a79b531ea0a3faf0eb4a058e255fac13a2d224cc647). 
+
 ### Risk Parameters
 
 | Asset | eMode Params     | Borrow | Siloed | Collateral | Borrow Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | Supply Cap | Borrow Cap | Reserve Factor |
@@ -21,7 +23,7 @@ Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/propo
 | CRV   | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 75% | 80% |  5% | - | 0 | 0 | 10% |
 | SUSHI | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 20% | 45% | 10% | - | 0 | 0 | 20% |
 
-The reserve factor aks treasury collector contract can be found at [0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD](https://ftmscan.com/address/0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD)
+The reserve factor aka treasury collector contract can be found at [0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD](https://ftmscan.com/address/0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD)
 
 ### Price Feed
 

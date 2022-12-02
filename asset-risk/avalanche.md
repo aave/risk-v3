@@ -23,18 +23,23 @@ The reserve factor aka treasury collector contract can be found at [0xaCbE7d574E
 
 ### Price Feed
 
-Chainlink oracles are available on Avalanche based on [this address repository](https://docs.chain.link/docs/avalanche-price-feeds/).
+The price update frequency results from the liquidation strategy. We follow a margin method, in which prices are refreshed every time the deviation crosses a certain threshold. We use [Chainlink](https://chain.link)’s decentralised oracles for the price feeds.
 
-| Price Pair | Deviation Threshold | Chainlink Feed |
-| :--------: | :-----------------: | :------------: |
-|  AVAX/USD  |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/avax-usd |
-|  AAVE/USD  |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/aave-usd |
-|  DAI/USD   |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/dai-usd |
-|  USDT/USD  |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/usdt-usd |
-|  LINK/USD  |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/link-usd |
-|  USDC/USD  |      0.5%           | https://data.chain.link/avalanche/mainnet/crypto-usd/usdc-usd |
-|  BTC/USD   |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/btc-usd |
-|  ETH/USD   |      0.1%           | https://data.chain.link/avalanche/mainnet/crypto-usd/eth-usd |
+The Avalanche Chainlink oracles are available in the following [address repository](https://docs.chain.link/docs/avalanche-price-feeds/).
+
+| Pair Data Feed                                                              | Deviation Threshold | Oracle Contract Address                                                                                               |
+| :-------------------------------------------------------------------------: | :-----------------: | :-------------------------------------------------------------------------------------------------------------------: |
+| [DAI/USD](https://data.chain.link/avalanche/mainnet/stablecoins/dai-usd)    | 0.5%                | [0x51D7180edA2260cc4F6e4EebB82FEF5c3c2B8300](https://snowtrace.io/address/0x51D7180edA2260cc4F6e4EebB82FEF5c3c2B8300) |
+| [FRAX/USD](https://data.chain.link/avalanche/mainnet/crypto-usd/frax-usd)   | 0.5%                | [0xbBa56eF1565354217a3353a466edB82E8F25b08e](https://snowtrace.io/address/0xbBa56eF1565354217a3353a466edB82E8F25b08e) |
+| [MAI/USD](https://data.chain.link/avalanche/mainnet/crypto-usd/mimatic-usd) | 1%                  | [0x5D1F504211c17365CA66353442a74D4435A8b778](https://snowtrace.io/address/0x5D1F504211c17365CA66353442a74D4435A8b778) |
+| [USDC/USD](https://data.chain.link/avalanche/mainnet/stablecoins/usdc-usd)  | 0.5%                | [0xF096872672F44d6EBA71458D74fe67F9a77a23B9](https://snowtrace.io/address/0xF096872672F44d6EBA71458D74fe67F9a77a23B9) |
+| [USDT/USD](https://data.chain.link/avalanche/mainnet/stablecoins/usdt-usd)  | 0.1%                | [0xEBE676ee90Fe1112671f19b6B7459bC678B67e8a](https://snowtrace.io/address/0xEBE676ee90Fe1112671f19b6B7459bC678B67e8a) |
+| [AAVE/USD](https://data.chain.link/avalanche/mainnet/crypto-usd/aave-usd)   | 0.5%                | [0x3CA13391E9fb38a75330fb28f8cc2eB3D9ceceED](https://snowtrace.io/address/0x3CA13391E9fb38a75330fb28f8cc2eB3D9ceceED) |
+| [BTC/USD](https://data.chain.link/avalanche/mainnet/crypto-usd/btc-usd)     | 0.1%                | [0x2779D32d5166BAaa2B2b658333bA7e6Ec0C65743](https://snowtrace.io/address/0x2779D32d5166BAaa2B2b658333bA7e6Ec0C65743) |
+| [LINK/USD](https://data.chain.link/avalanche/mainnet/crypto-usd/link-usd)   | 0.5%                | [0x49ccd9ca821EfEab2b98c60dC60F518E765EDe9a](https://snowtrace.io/address/0x49ccd9ca821EfEab2b98c60dC60F518E765EDe9a) |
+| [AVAX/USD](https://data.chain.link/avalanche/mainnet/crypto-usd/avax-usd)   | 0.1%                | [0x0A77230d17318075983913bC2145DB16C7366156](https://snowtrace.io/address/0x0A77230d17318075983913bC2145DB16C7366156) |
+| [WETH/USD](https://data.chain.link/avalanche/mainnet/crypto-usd/eth-usd)    | 0.1%                | [0x976B3D034E162d8bD72D6b9C989d545b839003b0](https://snowtrace.io/address/0x976B3D034E162d8bD72D6b9C989d545b839003b0) |
+
 
 ### Related Smart Contracts
 

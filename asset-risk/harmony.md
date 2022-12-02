@@ -8,6 +8,8 @@ description: Aave's deployment on the Harmony
 
 Harmony is a sharded proof-of-stake blockchain, operated by over 100 external validators. It is fully EVM and Ethereum tooling compatible. Read more about [👉🏻 Harmony](https://www.harmony.one/)
 
+Due to the Horizon bridge exploit, certain assets on the Harmony network are not at parity with Ethereum, which affects the Aave V3 Harmony market. Per the community, the [Harmony market has been frozen](https://snapshot.org/#/aave.eth/proposal/0x81a78109941e5e0ac6cb5ebf82597c839c20ad6821a8c3ff063dba39032533d4).
+
 ### Risk Parameters
 
 | Asset | eMode Params     | Borrow | Siloed | Collateral | Borrow Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | Supply Cap | Borrow Cap | Reserve Factor |
@@ -21,7 +23,7 @@ Harmony is a sharded proof-of-stake blockchain, operated by over 100 external va
 | WETH  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 80% | 82.5% | 5% | - | 0 | 0 | 10% |
 | WONE  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 25% | 45% | 15% | - | 0 | 0 | 20% |
 
-The reserve factor aks treasury collector contract can be found at [0xeaC16519923774Fd7723d3D5E442a1e2E46BA962](https://explorer.harmony.one/address/0xeac16519923774fd7723d3d5e442a1e2e46ba962)
+The reserve factor aka treasury collector contract can be found at [0xeaC16519923774Fd7723d3D5E442a1e2E46BA962](https://explorer.harmony.one/address/0xeac16519923774fd7723d3d5e442a1e2e46ba962)
 
 ### Price Feed
 

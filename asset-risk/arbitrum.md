@@ -24,17 +24,22 @@ The reserve factor aka treasury collector contract can be found at [0xC3301b30f4
 
 ### Price Feed
 
-Chainlink oracles are available on Arbitrum based on [👉🏻 address repository](https://docs.chain.link/docs/arbitrum-price-feeds/).
+The price update frequency results from the liquidation strategy. We follow a margin method, in which prices are refreshed every time the deviation crosses a certain threshold. We use [Chainlink](https://chain.link)’s decentralised oracles for the price feeds.
 
-| Price Pair | Deviation Threshold | Chainlink Feed |
-| :--------: | :-----------------: | :------------: |
-|  AAVE/USD  |      0.5%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/aave-usd |
-|  DAI/USD   |      0.1%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/dai-usd |
-|  USDT/USD  |      0.1%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/usdt-usd |
-|  LINK/USD  |      0.2%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/link-usd |
-|  USDC/USD  |      0.1%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/usdc-usd |
-|  BTC/USD   |      0.05%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/btc-usd |
-|  ETH/USD   |      0.05%           | https://data.chain.link/arbitrum/mainnet/crypto-usd/eth-usd |
+The Arbitrum Chainlink oracles are available in the following [address repository](https://docs.chain.link/docs/arbitrum-price-feeds/).
+
+| Pair Data Feed                                                            | Deviation Threshold | Oracle Contract Address                                                                                              |
+| :-----------------------------------------------------------------------: | :-----------------: | :------------------------------------------------------------------------------------------------------------------: |
+| [DAI/USD](https://data.chain.link/arbitrum/mainnet/stablecoins/dai-usd)   | 0.1%                | [0xc5c8e77b397e531b8ec06bfb0048328b30e9ecfb](https://arbiscan.io/address/0xc5c8e77b397e531b8ec06bfb0048328b30e9ecfb) |
+| [EURS/USD](https://data.chain.link/arbitrum/mainnet/fiat/eur-usd)         | 0.1%                | [0xA14d53bC1F1c0F31B4aA3BD109344E5009051a84](https://arbiscan.io/address/0xA14d53bC1F1c0F31B4aA3BD109344E5009051a84) |
+| [USDC/USD](https://data.chain.link/arbitrum/mainnet/stablecoins/usdc-usd) | 0.1%                | [0x50834f3163758fcc1df9973b6e91f0f0f0434ad3](https://arbiscan.io/address/0x50834f3163758fcc1df9973b6e91f0f0f0434ad3) |
+| [USDT/USD](https://data.chain.link/arbitrum/mainnet/stablecoins/usdt-usd) | 0.1%                | [0x3f3f5df88dc9f13eac63df89ec16ef6e7e25dde7](https://arbiscan.io/address/0x3f3f5df88dc9f13eac63df89ec16ef6e7e25dde7) |
+| [AAVE/USD](https://data.chain.link/arbitrum/mainnet/crypto-usd/aave-usd)  | 0.5%                | [0xad1d5344aade45f43e596773bcc4c423eabdd034](https://arbiscan.io/address/0xad1d5344aade45f43e596773bcc4c423eabdd034) |
+| [LINK/USD](https://data.chain.link/arbitrum/mainnet/crypto-usd/link-usd)  | 0.2%                | [0x86e53cf1b870786351da77a57575e79cb55812cb](https://arbiscan.io/address/0x86e53cf1b870786351da77a57575e79cb55812cb) |
+| [BTC/USD](https://data.chain.link/arbitrum/mainnet/crypto-usd/wbtc-usd)   | 0.05%               | [0x6ce185860a4963106506c203335a2910413708e9](https://arbiscan.io/address/0x6ce185860a4963106506c203335a2910413708e9) |
+| [WETH/USD](https://data.chain.link/arbitrum/mainnet/crypto-usd/eth-usd)   | 0.05%               | [0x639fe6ab55c921f74e7fac1ee960c0b6293ba612](https://arbiscan.io/address/0x639fe6ab55c921f74e7fac1ee960c0b6293ba612) |
+
+
 
 ### Related Smart Contracts
 
