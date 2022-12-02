@@ -24,6 +24,8 @@ The reserve factor aka treasury collector contract can be found at [0xC3301b30f4
 
 ### Price Feed
 
+The price update frequency results from the liquidation strategy. We follow a margin method, in which prices are refreshed every time the deviation crosses a certain threshold. We use [Chainlink](https://chain.link)’s decentralised oracles for the price feeds.
+
 The Arbitrum Chainlink oracles are available in the following [address repository](https://docs.chain.link/docs/arbitrum-price-feeds/).
 
 | Pair Data Feed                                                            | Deviation Threshold | Oracle Contract Address                                                                                              |
