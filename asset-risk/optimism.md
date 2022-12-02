@@ -21,12 +21,24 @@ You can read more about optimism [👉 here](https://www.optimism.io/about)
 | WBTC  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 70% | 75% | 10% | - | 0 | 0 | 20% |
 | WETH  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 80% | 82.5% | 5% | - | 0 | 0 | 10% |
 
-The reserve factor aks treasury collector contract can be found at [0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21](https://optimistic.etherscan.io/address/0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21#code)
+The reserve factor aka treasury collector contract can be found at [0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21](https://optimistic.etherscan.io/address/0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21#code)
 
 ### Price Feed
+
 The price update frequency results from the liquidation strategy. We follow a margin method, in which prices are refreshed every time the deviation crosses a certain threshold. We use [Chainlink](https://chain.link)’s decentralised oracles for the price feeds.
 
-Chainlink oracles are available on Optimism based on [👉🏻 address repository](https://docs.chain.link/docs/optimism-price-feeds/).
+The Optimism Chainlink oracles are available in the following [address repository](https://docs.chain.link/docs/optimism-price-feeds/).
+
+| Pair Data Feed                                                            | Deviation Threshold | Oracle Contract Address                                                                                                          |
+| :-----------------------------------------------------------------------: | :-----------------: | :------------------------------------------------------------------------------------------------------------------------------: |
+| [DAI/USD](https://data.chain.link/optimism/mainnet/stablecoins/dai-usd)   | 0.1%                | [0x8dBa75e83DA73cc766A7e5a0ee71F656BAb470d6](https://optimistic.etherscan.io/address/0x8dBa75e83DA73cc766A7e5a0ee71F656BAb470d6) |
+| [SUSD/USD](https://data.chain.link/optimism/mainnet/crypto-usd/susd-usd)  | 0.5%                | [0x7f99817d87baD03ea21E05112Ca799d715730efe](https://optimistic.etherscan.io/address/0x7f99817d87baD03ea21E05112Ca799d715730efe) |
+| [USDC/USD](https://data.chain.link/optimism/mainnet/stablecoins/usdc-usd) | 0.1%                | [0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3](https://optimistic.etherscan.io/address/0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3) |
+| [USDT/USD](https://data.chain.link/optimism/mainnet/stablecoins/usdt-usd) | 0.1%                | [0xECef79E109e997bCA29c1c0897ec9d7b03647F5E](https://optimistic.etherscan.io/address/0xECef79E109e997bCA29c1c0897ec9d7b03647F5E) |
+| [AAVE/USD](https://data.chain.link/optimism/mainnet/crypto-usd/aave-usd)  | 0.2%                | [0x338ed6787f463394D24813b297401B9F05a8C9d1](https://optimistic.etherscan.io/address/0x338ed6787f463394D24813b297401B9F05a8C9d1) |
+| [LINK/USD](https://data.chain.link/optimism/mainnet/crypto-usd/link-usd)  | 0.2%                | [0xCc232dcFAAE6354cE191Bd574108c1aD03f86450](https://optimistic.etherscan.io/address/0xCc232dcFAAE6354cE191Bd574108c1aD03f86450) |
+| [BTC/USD](https://data.chain.link/optimism/mainnet/crypto-usd/btc-usd)    | 0.1%                | [0xD702DD976Fb76Fffc2D3963D037dfDae5b04E593](https://optimistic.etherscan.io/address/0xD702DD976Fb76Fffc2D3963D037dfDae5b04E593) |
+| [ETH/USD](https://data.chain.link/optimism/mainnet/crypto-usd/eth-usd)    | 0.15%               | [0x13e3Ee699D1909E989722E753853AE30b17e08c5](https://optimistic.etherscan.io/address/0x13e3Ee699D1909E989722E753853AE30b17e08c5) |
 
 ### Related Smart Contracts
 
