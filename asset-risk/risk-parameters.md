@@ -11,7 +11,7 @@ You can find the risk parameters per markets in:
 * [Polygon](polygon.md)
 * [Avalanche](avalanche.md)
 
-To retrieve the relevant values directly from the smart contracts, see [this section of the developer docs](https://docs.aave.com/developers/the-core-protocol/lendingpool#getreservedata).
+To retrieve the relevant values directly from the smart contracts, see [this section of the developer docs](https://docs.aave.com/developers/core-contracts/pool#getreservedata).
 
 ## Risk Parameters Analysis
 
