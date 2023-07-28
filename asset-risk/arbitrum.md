@@ -9,18 +9,9 @@ Following the [Aave DAO snapshot approval](https://snapshot.org/#/aave.eth/propo
 
 ### Risk Parameters
 
-| Asset | eMode Params     | Borrow | Siloed | Collateral | Borrow Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | Supply Cap | Borrow Cap | Reserve Factor |
-| ----- | ---------------- | --- | --- | ---------- | ----- | --- | ----------  | ---------- | --------- | ----- | ----- | -------------- |
-| DAI   | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 75% | 80% |  5% | - | 2B | 0 | 10% |
-| USDC  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 80% | 85% |  5% | - | 2B | 0 | 10% |
-| USDT  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Only Isolation Mode | Yes | 75% | 80% |  5% | 5M | 2B | 0 | 10% |
-| EURS  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Only Isolation Mode | No | 65% | 70% | 7.5% | 5M | 2B | 0 | 10% |
-| AAVE  | <ul><li>eMode: 0 (default)</li></ul> | No  | No | Yes | No | 50% | 65% | 10% | - | 0 | 0 |  0% |
-| LINK  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 70% | 75% | 7.5% | - | 0 | 0 | 20% |
-| WBTC  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 70% | 75% | 10% | - | 0 | 0 | 20% |
-| WETH  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 80% | 82.5% | 5% | - | 0 | 0 | 10% |
+View reserve parameters on [live dashboard](https://config.fyi).
 
-The reserve factor aka treasury collector contract can be found at [0xC3301b30f4EcBfd59dE0d74e89690C1a70C6f21B](https://arbiscan.io/address/0xc3301b30f4ecbfd59de0d74e89690c1a70c6f21b#code)
+The reserve factor is accumulated to the [treasury controller contract](https://arbiscan.io/address/0xc3301b30f4ecbfd59de0d74e89690c1a70c6f21b#code)
 
 ### Price Feed
 

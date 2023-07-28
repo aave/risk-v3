@@ -10,20 +10,9 @@ Per the community, the [Fantom market has been frozen](https://snapshot.org/#/aa
 
 ### Risk Parameters
 
-| Asset | eMode Params     | Borrow | Siloed | Collateral | Borrow Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | Supply Cap | Borrow Cap | Reserve Factor |
-| ----- | ---------------- | --- | --- | ---------- | ----- | --- | ----------  | ---------- | --------- | ----- | ----- | -------------- |
-| DAI   | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 75% | 80% |  5% | - | 2B | 0 | 10% |
-| USDC  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 82.5% | 85% |  4% | - | 2B | 0 | 10% |
-| USDT  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Only Isolation Mode | Yes | 75% | 80% |  5% | 5M | 2B | 0 | 10% |
-| AAVE  | <ul><li>eMode: 0 (default)</li></ul> | No  | No | Yes | No | 60% | 70% | 7.5% | - | 0 | 0 |  0% |
-| LINK  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 50% | 65% | 7.5% | - | 0 | 0 | 20% |
-| WBTC  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 70% | 75% | 6.5% | - | 0 | 0 | 20% |
-| WETH  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 80% | 82.5% | 5% | - | 0 | 0 | 10% |
-| WFTM  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 25% | 45% | 15% | - | 0 | 0 | 20% |
-| CRV   | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 75% | 80% |  5% | - | 0 | 0 | 10% |
-| SUSHI | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 20% | 45% | 10% | - | 0 | 0 | 20% |
+View reserve parameters on [live dashboard](https://config.fyi).
 
-The reserve factor aka treasury collector contract can be found at [0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD](https://ftmscan.com/address/0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD)
+The reserve factor is accumulated to the [treasury controller contract](https://ftmscan.com/address/0xc0F0cFBbd0382BcE3B93234E4BFb31b2aaBE36aD)
 
 ### Price Feed
 

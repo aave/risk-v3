@@ -11,26 +11,9 @@ Following huge success of V2 markets, V3 of the Aave Protocol has been deployed 
 
 ### Risk Parameters
 
-| Asset | eMode Params     | Borrow | Siloed | Collateral | Borrow Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | Supply Cap | Borrow Cap | Reserve Factor |
-| ----- | ---------------- | --- | --- | ---------- | ----- | --- | ----------  | ---------- | --------- | ----- | ----- | -------------- |
-| DAI   | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 75% | 80% |  5% | - | 2B | 0 | 10% |
-| USDC  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 82.5% | 85% |  4% | - | 2B | 0 | 10% |
-| USDT  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Only Isolation Mode | Yes | 75% | 80% |  5% | 5M | 2B | 0 | 10% |
-| EURS  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Only Isolation Mode | No | 65% | 70% | 7.5% | 5M | 2B | 0 | 10% |
-| agEUR  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | No | No | 0% | 0% | 0% | - | - | - | 20% |
-| jEUR  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | No | No | 0% | 0% | 0% | - | - | - | 20% |
-| AAVE  | <ul><li>eMode: 0 (default)</li></ul> | No  | No | Yes | No | 60% | 70% | 7.5% | - | 0 | 0 |  0% |
-| LINK  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 50% | 65% | 7.5% | - | 0 | 0 | 20% |
-| WBTC  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 70% | 75% | 6.5% | - | 0 | 0 | 20% |
-| WETH  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 80% | 82.5% | 5% | - | 0 | 0 | 10% |
-| WMATIC | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 65% | 70% | 10% | - | 0 | 0 | 20% |
-| CRV   | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 75% | 80% |  5% | - | 0 | 0 | 10% |
-| SUSHI | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 20% | 45% | 10% | - | 0 | 0 | 20% |
-| GHST | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 25% | 45% | 15% | - | 0 | 0 | 20% |
-| DPI | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 20% | 45% | 10% | - | 0 | 0 | 20% |
-| BAL | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 20% | 45% | 10% | - | 0 | 0 | 20% |
+View reserve parameters on [live dashboard](https://config.fyi).
 
-The reserve factor collector contract can be found at [0x73D435AFc15e35A9aC63B2a81B5AA54f974eadFe](https://polygonscan.com/address/0x73D435AFc15e35A9aC63B2a81B5AA54f974eadFe)
+The reserve factor is accumulated to the [treasury controller contract](https://polygonscan.com/address/0x73D435AFc15e35A9aC63B2a81B5AA54f974eadFe)
 
 ### Price Feed
 

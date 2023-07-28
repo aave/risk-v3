@@ -10,18 +10,9 @@ You can read more about optimism [👉 here](https://www.optimism.io/about)
 
 ### Risk Parameters
 
-| Asset | eMode Params     | Borrow | Siloed | Collateral | Borrow Isolation | LTV | Liq. Thresh | Liq. Bonus | Debt Ceil | Supply Cap | Borrow Cap | Reserve Factor |
-| ----- | ---------------- | --- | --- | ---------- | ----- | --- | ----------  | ---------- | --------- | ----- | ----- | -------------- |
-| DAI   | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 75% | 80% |  5% | - | 2B | 0 | 10% |
-| USDC  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Yes | Yes | 80% | 85% |  5% | - | 2B | 0 | 10% |
-| USDT  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | Only Isolation Mode | Yes | 75% | 80% |  5% | 5M | 2B | 0 | 10% |
-| SUSD  | <ul><li>category: 1 </li><li>LTV: 97%</li><li>liq. Thresh: 97.5</li><li>Liq. Bonus: 2%</li></ul> | Yes | No | No | No | - | - | - | - | 2B | 0 | 10% |
-| AAVE  | <ul><li>eMode: 0 (default)</li></ul> | No  | No | Yes | No | 50% | 65% | 10% | - | 0 | 0 |  0% |
-| LINK  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 70% | 75% | 7.5% | - | 0 | 0 | 20% |
-| WBTC  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 70% | 75% | 10% | - | 0 | 0 | 20% |
-| WETH  | <ul><li>eMode: 0 (default)</li></ul> | Yes | No | Yes | No | 80% | 82.5% | 5% | - | 0 | 0 | 10% |
+View reserve parameters on [live dashboard](https://config.fyi).
 
-The reserve factor aka treasury collector contract can be found at [0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21](https://optimistic.etherscan.io/address/0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21#code)
+The reserve factor is accumulated to the [treasury controller contract](https://optimistic.etherscan.io/address/0xA77E4A084d7d4f064E326C0F6c0aCefd47A5Cb21#code)
 
 ### Price Feed
 
