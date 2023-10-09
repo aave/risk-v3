@@ -4,7 +4,7 @@ description: Mitigating liquidity risk through the borrow interest rate model
 
 # Borrow Interest Rate
 
-Aave’s interest rate algorithm is calibrated to manage liquidity risk and optimise utilisation. The borrow interest rates are derived from the [Utilisation Rate](historical-utilization.md) $$U$$.
+Aave’s interest rate algorithm is calibrated to manage liquidity risk and optimise utilisation. The borrow interest rates are derived from the Utilisation Rate $$U$$.
 
 $$U$$ is an indicator of the availability of capital within the pool. The interest rate model manages liquidity risk in the protocol through user incentives to support liquidity:
 
